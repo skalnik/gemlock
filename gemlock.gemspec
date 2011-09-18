@@ -5,11 +5,11 @@ require "gemlock/version"
 Gem::Specification.new do |s|
   s.name        = "gemlock"
   s.version     = Gemlock::VERSION
-  s.authors     = ["Mike Skalnik"]
-  s.email       = ["mike.skalnik@gmail.com"]
+  s.authors     = ["Mike Skalnik", "Brian Gardner", "Tyler Hastings", "Jabari Worthy"]
+  s.email       = ["mskalnik@gatech.edu"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Get notified when there are updates for gems in your Rails application}
+  s.description = %q{When installed, allows a user to check for updates in their Rails application}
 
   s.rubyforge_project = "gemlock"
 
