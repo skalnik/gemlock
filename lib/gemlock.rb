@@ -5,11 +5,11 @@ module Gemlock
 
   class << self
     def lockfile
-      @lockfile = if defined?(Rails)
-                    Rails.root.join('Gemfile.lock')
-                  else
-                    Bundler::SharedHelpers.default_lockfile
-                  end
+      @lockfile ||= if defined?(Rails)
+                      Rails.root.join('Gemfile.lock')
+                    else
+                      Bundler::SharedHelpers.default_lockfile
+                    end
     end
 
     def locked_gemfile_specs
