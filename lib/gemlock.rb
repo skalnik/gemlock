@@ -20,5 +20,25 @@ module Gemlock
       locked_gemfile_specs = locked.specs.clone
       locked_gemfile_specs.delete_if { |spec| !gemfile_names.include?(spec.name) }
     end
+
+    def outdated_gems
+      locked_gemfile_specs.each do |spec|
+        begin
+          response = RestClient.get "https://rubygems.org/api/v1/gems/#{spec.name}.json"
+        rescue => e
+          e.response
+         end
+
+        result = JSON.parse(response)
+
+        gem_version = result["version"]
+
+        if(gem_version>spec.version.to_s)
+          #Gem is out of date
+        else
+          #Gem is not out of date
+        end     
+      end
+    end
   end
 end
