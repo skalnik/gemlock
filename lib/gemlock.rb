@@ -30,5 +30,29 @@ module Gemlock
 
       return json_hash["version"]
     end
+
+    def oudated
+      specs = {}
+      locked_gemfile_specs.each do |spec|
+        specs[spec.name] = spec.version.to_s
+      end
+
+      oudated = {}
+      locked_gemfile_specs.each do |spec|
+        latest_version = lookup_version(spec.name)
+        if Gem::Version.new(latest_version) > Gem::Version.new(spec.version)
+          oudated[spec.name] = latest_version
+        end
+        hash
+      end
+
+      return_hash = {}
+      oudated.each_pair do |name, latest_version|
+        return_hash[name] = { :latest => latest_version,
+                              :current => specs[name] }
+      end
+
+      return_hash
+    end
   end
 end

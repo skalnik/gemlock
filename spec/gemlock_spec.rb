@@ -43,4 +43,23 @@ describe Gemlock do
       end
     end
   end
+
+  describe "#outdated" do
+    it "should return an array of outdated gem specifications" do
+      Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
+
+      VCR.use_cassette('outdated_cassette') do
+        expected = {'coffee-rails' => { :current => '3.1.0',
+                                        :latest  => '3.1.1' },
+                    'sass-rails'   => { :current => '3.1.0',
+                                        :latest  => '3.1.2' },
+                    'unicorn'      => { :current => '4.1.0',
+                                        :latest  => '4.1.1' },
+                    'json'         => { :current => '1.5.0',
+                                        :latest  => '1.6.1' } }
+
+        Gemlock.oudated.should eql expected
+      end
+    end
+  end
 end
