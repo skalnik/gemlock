@@ -1,5 +1,7 @@
 require "bundler"
 
+require "json"
+
 require "gemlock/version"
 
 module Gemlock

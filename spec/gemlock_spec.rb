@@ -1,4 +1,4 @@
-require 'spec helper'
+require 'spec_helper'
 
 describe "gemlock methods" do
   it "should check if gems are outdated" do
