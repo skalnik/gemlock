@@ -27,22 +27,23 @@ module Gemlock
 
     def outdated_gems
       locked_gemfile_specs.each do |spec|
-        begin
-          response = RestClient.get "https://rubygems.org/api/v1/gems/#{spec.name}.json"
-        rescue => e
-          e.response
-         end
 
-        result = JSON.parse(response)
-
-        gem_version = result["version"]
+        json_result = request_gem_data(spec.name)
+        gem_version = json_result["version"]
 
         if(gem_version>spec.version.to_s)
           #Gem is out of date
         else
           #Gem is not out of date
-        end     
-      end
-    end
+        end    
+      end 
+    end 
+
+    def request_gem_data(name)
+      response = RestClient.get "https://rubygems.org/api/v1/gems/#{name}.json"
+      result = JSON.parse(response)
+
+      return result
+    end 
   end
 end
