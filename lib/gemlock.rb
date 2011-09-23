@@ -1,5 +1,5 @@
 require "bundler"
-
+require "rest_client"
 require "json"
 
 require "gemlock/version"
@@ -25,25 +25,10 @@ module Gemlock
       locked_gemfile_specs.delete_if { |spec| !gemfile_names.include?(spec.name) }
     end
 
-    def outdated_gems
-      locked_gemfile_specs.each do |spec|
+    def lookup_version(name)
+      json_hash = JSON.parse(RestClient.get("https://rubygems.org/api/v1/gems/#{name}.json"))
 
-        json_result = request_gem_data(spec.name)
-        gem_version = json_result["version"]
-
-        if(gem_version>spec.version.to_s)
-          #Gem is out of date
-        else
-          #Gem is not out of date
-        end    
-      end 
-    end 
-
-    def request_gem_data(name)
-      response = RestClient.get "https://rubygems.org/api/v1/gems/#{name}.json"
-      result = JSON.parse(response)
-
-      return result
-    end 
+      return json_hash["version"]
+    end
   end
 end

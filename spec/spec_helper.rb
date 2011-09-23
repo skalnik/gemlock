@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+
 begin
   Bundler.require(:default, :development)
 rescue Bundler::BundlerError => e
@@ -11,3 +12,10 @@ end
 RSpec.configure do |config|
   config.mock_with :mocha
 end
+
+VCR.config do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.stub_with :fakeweb
+  c.default_cassette_options = { :record => :once }
+end
+

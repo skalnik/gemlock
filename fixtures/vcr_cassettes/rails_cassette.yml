@@ -1,0 +1,45 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://rubygems.org:443/api/v1/gems/rails.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 22 Sep 2011 14:01:03 GMT
+      server:
+      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      etag:
+      - ! '"cf2b5a57c64d369aafab0c31e42b9aad"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.020912'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      status:
+      - '200'
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+    body: ! '{"dependencies":{"runtime":[{"name":"actionmailer","requirements":"=
+      3.1.0"},{"name":"actionpack","requirements":"= 3.1.0"},{"name":"activerecord","requirements":"=
+      3.1.0"},{"name":"activeresource","requirements":"= 3.1.0"},{"name":"activesupport","requirements":"=
+      3.1.0"},{"name":"bundler","requirements":"~> 1.0"},{"name":"railties","requirements":"=
+      3.1.0"}],"development":[]},"name":"rails","downloads":5529614,"info":"Ruby on
+      Rails is a full-stack web framework optimized for programmer happiness and sustainable
+      productivity. It encourages beautiful code by favoring convention over configuration.","version_downloads":153236,"version":"3.1.0","homepage_uri":"http://www.rubyonrails.org","bug_tracker_uri":"http://rails.lighthouseapp.com/projects/8994-ruby-on-rails","source_code_uri":"http://github.com/rails/rails","gem_uri":"http://rubygems.org/gems/rails-3.1.0.gem","project_uri":"http://rubygems.org/gems/rails","authors":"David
+      Heinemeier Hansson","mailing_list_uri":"http://groups.google.com/group/rubyonrails-talk","documentation_uri":"http://api.rubyonrails.org","wiki_uri":"http://wiki.rubyonrails.org"}'
+    http_version: '1.1'

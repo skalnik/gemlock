@@ -20,8 +20,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency('rake', '>= 0.8.7')
   s.add_dependency('bundler', '~> 1.0.0')
+  s.add_dependency('rest-client')
+  s.add_dependency('json')
 
   s.add_development_dependency('rspec' , '~> 2.6.0')
   s.add_development_dependency('mocha' , '~> 0.10.0')
   s.add_development_dependency('pry'   , '>= 0.9.5')
+  s.add_development_dependency('vcr'   , '>= 1.11.0')
+  s.add_development_dependency('fakeweb', '>= 1.3.0')
 end
