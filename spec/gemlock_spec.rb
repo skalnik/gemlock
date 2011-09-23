@@ -58,7 +58,7 @@ describe Gemlock do
                     'json'         => { :current => '1.5.0',
                                         :latest  => '1.6.1' } }
 
-        Gemlock.oudated.should eql expected
+        Gemlock.outdated.should eql expected
       end
     end
   end
