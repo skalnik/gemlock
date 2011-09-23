@@ -19,3 +19,8 @@ VCR.config do |c|
   c.default_cassette_options = { :record => :once }
 end
 
+RSpec::Matchers.define :match_name_and_versions_of do |expected|
+  match do |actual|
+    expected == actual.inject([]) { |a, spec| a << [spec.name, spec.version.to_s] }
+  end
+end

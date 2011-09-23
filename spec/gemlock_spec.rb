@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Gemlock do
   describe "#locked_gemfile_specs" do
-    it "output the list of gems & version requirements" do
+    it "should output the list of gems & version requirements" do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
       specs = Gemlock.locked_gemfile_specs
@@ -12,7 +12,7 @@ describe Gemlock do
                   ["sqlite3",      "1.3.4"], ["uglifier",      "1.0.3"],
                   ["unicorn",      "4.1.0"]]
 
-      specs.should eql expected
+      specs.should match_name_and_versions_of expected
     end
   end
 
