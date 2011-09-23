@@ -4,6 +4,10 @@ Gemlock
 Provides rake tasks that allow you to check for out of date gems in a project
 using Bundler.
 
+### Travis Status
+
+[![Build Status](https://secure.travis-ci.org/skalnik/gemlock.png)](http://travis-ci.org/skalnik/gemlock)
+
 Overview
 --------
 
