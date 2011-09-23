@@ -31,7 +31,7 @@ module Gemlock
       return json_hash["version"]
     end
 
-    def oudated
+    def outdated
       specs = {}
       locked_gemfile_specs.each do |spec|
         specs[spec.name] = spec.version.to_s
