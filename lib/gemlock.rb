@@ -26,7 +26,7 @@ module Gemlock
     end
 
     def lookup_version(name)
-      json_hash = JSON.parse(RestClient.get("https://rubygems.org/api/v1/gems/#{name}.json"))
+      json_hash = JSON.parse(RestClient.get("http://rubygems.org/api/v1/gems/#{name}.json"))
 
       return json_hash["version"]
     end

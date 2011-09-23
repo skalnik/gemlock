@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/coffee-rails.json
+    uri: http://rubygems.org:80/api/v1/gems/coffee-rails.json
     body: 
     headers: 
       accept: 
@@ -17,29 +17,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"8d7bc50c01b6d796704c36b69d8732ab\""
+      - "\"9c2ec7b4ca6b602388a6ba9b663cdacd\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.019747"
+      - "0.018499"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:53 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"coffee-script\",\"requirements\":\">= 2.2.0\"},{\"name\":\"railties\",\"requirements\":\"~> 3.1.0\"}],\"development\":[]},\"name\":\"coffee-rails\",\"downloads\":140147,\"info\":\"Coffee Script adapter for the Rails asset pipeline.\",\"version_downloads\":43646,\"version\":\"3.1.1\",\"homepage_uri\":\"\",\"bug_tracker_uri\":\"\",\"source_code_uri\":\"https://github.com/rails/coffee-rails\",\"gem_uri\":\"http://rubygems.org/gems/coffee-rails-3.1.1.gem\",\"project_uri\":\"http://rubygems.org/gems/coffee-rails\",\"authors\":\"Santiago Pastorino\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"coffee-script\",\"requirements\":\">= 2.2.0\"},{\"name\":\"railties\",\"requirements\":\"~> 3.1.0\"}],\"development\":[]},\"name\":\"coffee-rails\",\"downloads\":140647,\"info\":\"Coffee Script adapter for the Rails asset pipeline.\",\"version_downloads\":44109,\"version\":\"3.1.1\",\"homepage_uri\":\"\",\"bug_tracker_uri\":\"\",\"source_code_uri\":\"https://github.com/rails/coffee-rails\",\"gem_uri\":\"http://rubygems.org/gems/coffee-rails-3.1.1.gem\",\"project_uri\":\"http://rubygems.org/gems/coffee-rails\",\"authors\":\"Santiago Pastorino\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/jquery-rails.json
+    uri: http://rubygems.org:80/api/v1/gems/jquery-rails.json
     body: 
     headers: 
       accept: 
@@ -54,29 +54,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"7b8f4b4f11f43511919ace9e2d8be129\""
+      - "\"d0e8c7c33ec96dac9955569f5bcf3e6d\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.028728"
+      - "0.019754"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:53 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"railties\",\"requirements\":\"~> 3.0\"},{\"name\":\"thor\",\"requirements\":\"~> 0.14\"}],\"development\":[{\"name\":\"bundler\",\"requirements\":\"~> 1.0.0\"},{\"name\":\"rails\",\"requirements\":\"~> 3.0\"}]},\"name\":\"jquery-rails\",\"downloads\":795877,\"info\":\"This gem provides jQuery and the jQuery-ujs driver for your Rails 3 application.\",\"version_downloads\":80728,\"version\":\"1.0.14\",\"homepage_uri\":\"http://rubygems.org/gems/jquery-rails\",\"bug_tracker_uri\":\"https://github.com/rails/jquery-rails/issues\",\"source_code_uri\":\"https://github.com/rails/jquery-rails\",\"gem_uri\":\"http://rubygems.org/gems/jquery-rails-1.0.14.gem\",\"project_uri\":\"http://rubygems.org/gems/jquery-rails\",\"authors\":\"Andr\\u00e9 Arko\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"railties\",\"requirements\":\"~> 3.0\"},{\"name\":\"thor\",\"requirements\":\"~> 0.14\"}],\"development\":[{\"name\":\"bundler\",\"requirements\":\"~> 1.0.0\"},{\"name\":\"rails\",\"requirements\":\"~> 3.0\"}]},\"name\":\"jquery-rails\",\"downloads\":796623,\"info\":\"This gem provides jQuery and the jQuery-ujs driver for your Rails 3 application.\",\"version_downloads\":81310,\"version\":\"1.0.14\",\"homepage_uri\":\"http://rubygems.org/gems/jquery-rails\",\"bug_tracker_uri\":\"https://github.com/rails/jquery-rails/issues\",\"source_code_uri\":\"https://github.com/rails/jquery-rails\",\"gem_uri\":\"http://rubygems.org/gems/jquery-rails-1.0.14.gem\",\"project_uri\":\"http://rubygems.org/gems/jquery-rails\",\"authors\":\"Andr\\u00e9 Arko\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/json.json
+    uri: http://rubygems.org:80/api/v1/gems/json.json
     body: 
     headers: 
       accept: 
@@ -91,29 +91,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"ce9e53c2c841d4b332d07e6055a65b81\""
+      - "\"0d5946766954c156f54a95170a7bfe09\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.018971"
+      - "0.019446"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:54 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[],\"development\":[{\"name\":\"bullshit\",\"requirements\":\">= 0\"},{\"name\":\"permutation\",\"requirements\":\">= 0\"},{\"name\":\"sdoc\",\"requirements\":\">= 0\"}]},\"name\":\"json\",\"downloads\":2556085,\"info\":\"This is a JSON implementation as a Ruby extension in C.\",\"version_downloads\":26819,\"version\":\"1.6.1\",\"homepage_uri\":\"http://flori.github.com/json\",\"bug_tracker_uri\":\"http://github.com/flori/json/issues\",\"source_code_uri\":\"http://flori.github.com/json/\",\"gem_uri\":\"http://rubygems.org/gems/json-1.6.1.gem\",\"project_uri\":\"http://rubygems.org/gems/json\",\"authors\":\"Florian Frank\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"http://flori.github.com/json/doc/index.html\",\"wiki_uri\":\"\"}"
+    body: "{\"dependencies\":{\"runtime\":[],\"development\":[{\"name\":\"bullshit\",\"requirements\":\">= 0\"},{\"name\":\"permutation\",\"requirements\":\">= 0\"},{\"name\":\"sdoc\",\"requirements\":\">= 0\"}]},\"name\":\"json\",\"downloads\":2557495,\"info\":\"This is a JSON implementation as a Ruby extension in C.\",\"version_downloads\":27452,\"version\":\"1.6.1\",\"homepage_uri\":\"http://flori.github.com/json\",\"bug_tracker_uri\":\"http://github.com/flori/json/issues\",\"source_code_uri\":\"http://flori.github.com/json/\",\"gem_uri\":\"http://rubygems.org/gems/json-1.6.1.gem\",\"project_uri\":\"http://rubygems.org/gems/json\",\"authors\":\"Florian Frank\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"http://flori.github.com/json/doc/index.html\",\"wiki_uri\":\"\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/rails.json
+    uri: http://rubygems.org:80/api/v1/gems/rails.json
     body: 
     headers: 
       accept: 
@@ -128,29 +128,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"72aec0bfd385b2b8ceee3d1ed74b8bfd\""
+      - "\"02c62079d080d8f20589916bd13b0b29\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.022513"
+      - "0.021497"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:54 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionmailer\",\"requirements\":\"= 3.1.0\"},{\"name\":\"actionpack\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activerecord\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activeresource\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activesupport\",\"requirements\":\"= 3.1.0\"},{\"name\":\"bundler\",\"requirements\":\"~> 1.0\"},{\"name\":\"railties\",\"requirements\":\"= 3.1.0\"}],\"development\":[]},\"name\":\"rails\",\"downloads\":5539753,\"info\":\"Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration.\",\"version_downloads\":157488,\"version\":\"3.1.0\",\"homepage_uri\":\"http://www.rubyonrails.org\",\"bug_tracker_uri\":\"http://rails.lighthouseapp.com/projects/8994-ruby-on-rails\",\"source_code_uri\":\"http://github.com/rails/rails\",\"gem_uri\":\"http://rubygems.org/gems/rails-3.1.0.gem\",\"project_uri\":\"http://rubygems.org/gems/rails\",\"authors\":\"David Heinemeier Hansson\",\"mailing_list_uri\":\"http://groups.google.com/group/rubyonrails-talk\",\"documentation_uri\":\"http://api.rubyonrails.org\",\"wiki_uri\":\"http://wiki.rubyonrails.org\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionmailer\",\"requirements\":\"= 3.1.0\"},{\"name\":\"actionpack\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activerecord\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activeresource\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activesupport\",\"requirements\":\"= 3.1.0\"},{\"name\":\"bundler\",\"requirements\":\"~> 1.0\"},{\"name\":\"railties\",\"requirements\":\"= 3.1.0\"}],\"development\":[]},\"name\":\"rails\",\"downloads\":5541246,\"info\":\"Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration.\",\"version_downloads\":158128,\"version\":\"3.1.0\",\"homepage_uri\":\"http://www.rubyonrails.org\",\"bug_tracker_uri\":\"http://rails.lighthouseapp.com/projects/8994-ruby-on-rails\",\"source_code_uri\":\"http://github.com/rails/rails\",\"gem_uri\":\"http://rubygems.org/gems/rails-3.1.0.gem\",\"project_uri\":\"http://rubygems.org/gems/rails\",\"authors\":\"David Heinemeier Hansson\",\"mailing_list_uri\":\"http://groups.google.com/group/rubyonrails-talk\",\"documentation_uri\":\"http://api.rubyonrails.org\",\"wiki_uri\":\"http://wiki.rubyonrails.org\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/ruby-debug.json
+    uri: http://rubygems.org:80/api/v1/gems/ruby-debug.json
     body: 
     headers: 
       accept: 
@@ -165,29 +165,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"d4e2e9928d166507caf5c173dc7ca341\""
+      - "\"01a4d0f5490bff9616bc0db087437186\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.017977"
+      - "0.017623"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:55 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"columnize\",\"requirements\":\">= 0.1\"},{\"name\":\"ruby-debug-base\",\"requirements\":\"~> 0.10.4.0\"}],\"development\":[]},\"name\":\"ruby-debug\",\"downloads\":525147,\"info\":\"A generic command line interface for ruby-debug.\\n\",\"version_downloads\":298586,\"version\":\"0.10.4\",\"homepage_uri\":\"http://rubyforge.org/projects/ruby-debug/\",\"bug_tracker_uri\":null,\"source_code_uri\":null,\"gem_uri\":\"http://rubygems.org/gems/ruby-debug-0.10.4.gem\",\"project_uri\":\"http://rubygems.org/gems/ruby-debug\",\"authors\":\"Kent Sibilev\",\"mailing_list_uri\":null,\"documentation_uri\":null,\"wiki_uri\":null}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"columnize\",\"requirements\":\">= 0.1\"},{\"name\":\"ruby-debug-base\",\"requirements\":\"~> 0.10.4.0\"}],\"development\":[]},\"name\":\"ruby-debug\",\"downloads\":525218,\"info\":\"A generic command line interface for ruby-debug.\\n\",\"version_downloads\":298650,\"version\":\"0.10.4\",\"homepage_uri\":\"http://rubyforge.org/projects/ruby-debug/\",\"bug_tracker_uri\":null,\"source_code_uri\":null,\"gem_uri\":\"http://rubygems.org/gems/ruby-debug-0.10.4.gem\",\"project_uri\":\"http://rubygems.org/gems/ruby-debug\",\"authors\":\"Kent Sibilev\",\"mailing_list_uri\":null,\"documentation_uri\":null,\"wiki_uri\":null}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/sass-rails.json
+    uri: http://rubygems.org:80/api/v1/gems/sass-rails.json
     body: 
     headers: 
       accept: 
@@ -202,29 +202,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"c233274dea541f53bf6d815106885c04\""
+      - "\"328093c3a55ea4b94cc5da44c1e78e2c\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.019487"
+      - "0.020463"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:55 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionpack\",\"requirements\":\"~> 3.1.0\"},{\"name\":\"railties\",\"requirements\":\"~> 3.1.0\"},{\"name\":\"sass\",\"requirements\":\">= 3.1.4\"},{\"name\":\"sprockets\",\"requirements\":\"~> 2.0.0\"},{\"name\":\"tilt\",\"requirements\":\"~> 1.3.2\"}],\"development\":[]},\"name\":\"sass-rails\",\"downloads\":207381,\"info\":\"Sass adapter for the Rails asset pipeline.\",\"version_downloads\":31931,\"version\":\"3.1.2\",\"homepage_uri\":\"\",\"bug_tracker_uri\":\"https://github.com/rails/sass-rails/issues\",\"source_code_uri\":\"https://github.com/rails/sass-rails\",\"gem_uri\":\"http://rubygems.org/gems/sass-rails-3.1.2.gem\",\"project_uri\":\"http://rubygems.org/gems/sass-rails\",\"authors\":\"wycats, chriseppstein\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"https://github.com/rails/sass-rails/blob/master/README.markdown\",\"wiki_uri\":\"\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionpack\",\"requirements\":\"~> 3.1.0\"},{\"name\":\"railties\",\"requirements\":\"~> 3.1.0\"},{\"name\":\"sass\",\"requirements\":\">= 3.1.4\"},{\"name\":\"sprockets\",\"requirements\":\"~> 2.0.0\"},{\"name\":\"tilt\",\"requirements\":\"~> 1.3.2\"}],\"development\":[]},\"name\":\"sass-rails\",\"downloads\":207906,\"info\":\"Sass adapter for the Rails asset pipeline.\",\"version_downloads\":32391,\"version\":\"3.1.2\",\"homepage_uri\":\"\",\"bug_tracker_uri\":\"https://github.com/rails/sass-rails/issues\",\"source_code_uri\":\"https://github.com/rails/sass-rails\",\"gem_uri\":\"http://rubygems.org/gems/sass-rails-3.1.2.gem\",\"project_uri\":\"http://rubygems.org/gems/sass-rails\",\"authors\":\"wycats, chriseppstein\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"https://github.com/rails/sass-rails/blob/master/README.markdown\",\"wiki_uri\":\"\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/sqlite3.json
+    uri: http://rubygems.org:80/api/v1/gems/sqlite3.json
     body: 
     headers: 
       accept: 
@@ -239,29 +239,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"794925f2bbe1f05ecd9e46f61621d810\""
+      - "\"b941b0d1ef7e1bc36c668ceb6705e353\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.017820"
+      - "0.019109"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:55 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[],\"development\":[{\"name\":\"hoe\",\"requirements\":\"~> 2.10\"},{\"name\":\"mini_portile\",\"requirements\":\"~> 0.2.2\"},{\"name\":\"rake-compiler\",\"requirements\":\"~> 0.7.0\"}]},\"name\":\"sqlite3\",\"downloads\":1085992,\"info\":\"This module allows Ruby programs to interface with the SQLite3\\ndatabase engine (http://www.sqlite.org).  You must have the\\nSQLite engine installed in order to build this module.\\n\\nNote that this module is NOT compatible with SQLite 2.x.\",\"version_downloads\":250346,\"version\":\"1.3.4\",\"homepage_uri\":\"http://github.com/luislavena/sqlite3-ruby\",\"bug_tracker_uri\":null,\"source_code_uri\":null,\"gem_uri\":\"http://rubygems.org/gems/sqlite3-1.3.4.gem\",\"project_uri\":\"http://rubygems.org/gems/sqlite3\",\"authors\":\"Jamis Buck, Luis Lavena, Aaron Patterson\",\"mailing_list_uri\":null,\"documentation_uri\":null,\"wiki_uri\":null}"
+    body: "{\"dependencies\":{\"runtime\":[],\"development\":[{\"name\":\"hoe\",\"requirements\":\"~> 2.10\"},{\"name\":\"mini_portile\",\"requirements\":\"~> 0.2.2\"},{\"name\":\"rake-compiler\",\"requirements\":\"~> 0.7.0\"}]},\"name\":\"sqlite3\",\"downloads\":1086616,\"info\":\"This module allows Ruby programs to interface with the SQLite3\\ndatabase engine (http://www.sqlite.org).  You must have the\\nSQLite engine installed in order to build this module.\\n\\nNote that this module is NOT compatible with SQLite 2.x.\",\"version_downloads\":250858,\"version\":\"1.3.4\",\"homepage_uri\":\"http://github.com/luislavena/sqlite3-ruby\",\"bug_tracker_uri\":null,\"source_code_uri\":null,\"gem_uri\":\"http://rubygems.org/gems/sqlite3-1.3.4.gem\",\"project_uri\":\"http://rubygems.org/gems/sqlite3\",\"authors\":\"Jamis Buck, Luis Lavena, Aaron Patterson\",\"mailing_list_uri\":null,\"documentation_uri\":null,\"wiki_uri\":null}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/uglifier.json
+    uri: http://rubygems.org:80/api/v1/gems/uglifier.json
     body: 
     headers: 
       accept: 
@@ -276,29 +276,29 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"ffbd0a2c81a19bf6971441187104aada\""
+      - "\"82d79fe7861444faee4ec4878b6679ba\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.019840"
+      - "0.020450"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:56 GMT
+      - Fri, 23 Sep 2011 07:16:47 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"execjs\",\"requirements\":\">= 0.3.0\"},{\"name\":\"multi_json\",\"requirements\":\">= 1.0.2\"}],\"development\":[{\"name\":\"bundler\",\"requirements\":\"~> 1.0.0\"},{\"name\":\"jeweler\",\"requirements\":\"~> 1.6.0\"},{\"name\":\"rcov\",\"requirements\":\">= 0\"},{\"name\":\"rspec\",\"requirements\":\"~> 2.6.0\"}]},\"name\":\"uglifier\",\"downloads\":248641,\"info\":\"Ruby wrapper for UglifyJS JavaScript compressor\",\"version_downloads\":80771,\"version\":\"1.0.3\",\"homepage_uri\":\"http://github.com/lautis/uglifier\",\"bug_tracker_uri\":\"https://github.com/lautis/uglifier/issues\",\"source_code_uri\":\"https://github.com/lautis/uglifier\",\"gem_uri\":\"http://rubygems.org/gems/uglifier-1.0.3.gem\",\"project_uri\":\"http://rubygems.org/gems/uglifier\",\"authors\":\"Ville Lautanala\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"execjs\",\"requirements\":\">= 0.3.0\"},{\"name\":\"multi_json\",\"requirements\":\">= 1.0.2\"}],\"development\":[{\"name\":\"bundler\",\"requirements\":\"~> 1.0.0\"},{\"name\":\"jeweler\",\"requirements\":\"~> 1.6.0\"},{\"name\":\"rcov\",\"requirements\":\">= 0\"},{\"name\":\"rspec\",\"requirements\":\"~> 2.6.0\"}]},\"name\":\"uglifier\",\"downloads\":249116,\"info\":\"Ruby wrapper for UglifyJS JavaScript compressor\",\"version_downloads\":81228,\"version\":\"1.0.3\",\"homepage_uri\":\"http://github.com/lautis/uglifier\",\"bug_tracker_uri\":\"https://github.com/lautis/uglifier/issues\",\"source_code_uri\":\"https://github.com/lautis/uglifier\",\"gem_uri\":\"http://rubygems.org/gems/uglifier-1.0.3.gem\",\"project_uri\":\"http://rubygems.org/gems/uglifier\",\"authors\":\"Ville Lautanala\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/unicorn.json
+    uri: http://rubygems.org:80/api/v1/gems/unicorn.json
     body: 
     headers: 
       accept: 
@@ -313,22 +313,22 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"99d2582038e2b4a7f938e0f088463238\""
+      - "\"af4e73b3db867d8f2e005f574dc49419\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.019507"
+      - "0.020062"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:47:56 GMT
+      - Fri, 23 Sep 2011 07:16:48 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"kgio\",\"requirements\":\"~> 2.4\"},{\"name\":\"rack\",\"requirements\":\">= 0\"},{\"name\":\"raindrops\",\"requirements\":\"~> 0.6\"}],\"development\":[{\"name\":\"isolate\",\"requirements\":\"~> 3.1\"},{\"name\":\"wrongdoc\",\"requirements\":\"~> 1.6\"}]},\"name\":\"unicorn\",\"downloads\":403522,\"info\":\"\\\\Unicorn is an HTTP server for Rack applications designed to only serve\\nfast clients on low-latency, high-bandwidth connections and take\\nadvantage of features in Unix/Unix-like kernels.  Slow clients should\\nonly be served by placing a reverse proxy capable of fully buffering\\nboth the the request and response in between \\\\Unicorn and slow clients.\",\"version_downloads\":21219,\"version\":\"4.1.1\",\"homepage_uri\":\"http://unicorn.bogomips.org/\",\"bug_tracker_uri\":\"http://rubyforge.org/mailman/listinfo/mongrel-unicorn\",\"source_code_uri\":\"http://git.bogomips.org/cgit/unicorn.git\",\"gem_uri\":\"http://rubygems.org/gems/unicorn-4.1.1.gem\",\"project_uri\":\"http://rubygems.org/gems/unicorn\",\"authors\":\"Unicorn hackers\",\"mailing_list_uri\":\"http://rubyforge.org/mailman/listinfo/mongrel-unicorn\",\"documentation_uri\":\"http://unicorn.bogomips.org/\",\"wiki_uri\":\"\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"kgio\",\"requirements\":\"~> 2.4\"},{\"name\":\"rack\",\"requirements\":\">= 0\"},{\"name\":\"raindrops\",\"requirements\":\"~> 0.6\"}],\"development\":[{\"name\":\"isolate\",\"requirements\":\"~> 3.1\"},{\"name\":\"wrongdoc\",\"requirements\":\"~> 1.6\"}]},\"name\":\"unicorn\",\"downloads\":403670,\"info\":\"\\\\Unicorn is an HTTP server for Rack applications designed to only serve\\nfast clients on low-latency, high-bandwidth connections and take\\nadvantage of features in Unix/Unix-like kernels.  Slow clients should\\nonly be served by placing a reverse proxy capable of fully buffering\\nboth the the request and response in between \\\\Unicorn and slow clients.\",\"version_downloads\":21295,\"version\":\"4.1.1\",\"homepage_uri\":\"http://unicorn.bogomips.org/\",\"bug_tracker_uri\":\"http://rubyforge.org/mailman/listinfo/mongrel-unicorn\",\"source_code_uri\":\"http://git.bogomips.org/cgit/unicorn.git\",\"gem_uri\":\"http://rubygems.org/gems/unicorn-4.1.1.gem\",\"project_uri\":\"http://rubygems.org/gems/unicorn\",\"authors\":\"Unicorn hackers\",\"mailing_list_uri\":\"http://rubyforge.org/mailman/listinfo/mongrel-unicorn\",\"documentation_uri\":\"http://unicorn.bogomips.org/\",\"wiki_uri\":\"\"}"
     http_version: "1.1"

@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://rubygems.org:443/api/v1/gems/rails.json
+    uri: http://rubygems.org:80/api/v1/gems/rails.json
     body: 
     headers: 
       accept: 
@@ -17,22 +17,22 @@
       x-ua-compatible: 
       - IE=Edge,chrome=1
       etag: 
-      - "\"2b7292ff1e188ecc0aae1f50591a9064\""
+      - "\"02c62079d080d8f20589916bd13b0b29\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.021268"
+      - "0.021653"
       server: 
       - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
       date: 
-      - Fri, 23 Sep 2011 03:35:39 GMT
+      - Fri, 23 Sep 2011 07:16:46 GMT
       status: 
       - "200"
       cache-control: 
       - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionmailer\",\"requirements\":\"= 3.1.0\"},{\"name\":\"actionpack\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activerecord\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activeresource\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activesupport\",\"requirements\":\"= 3.1.0\"},{\"name\":\"bundler\",\"requirements\":\"~> 1.0\"},{\"name\":\"railties\",\"requirements\":\"= 3.1.0\"}],\"development\":[]},\"name\":\"rails\",\"downloads\":5539660,\"info\":\"Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration.\",\"version_downloads\":157442,\"version\":\"3.1.0\",\"homepage_uri\":\"http://www.rubyonrails.org\",\"bug_tracker_uri\":\"http://rails.lighthouseapp.com/projects/8994-ruby-on-rails\",\"source_code_uri\":\"http://github.com/rails/rails\",\"gem_uri\":\"http://rubygems.org/gems/rails-3.1.0.gem\",\"project_uri\":\"http://rubygems.org/gems/rails\",\"authors\":\"David Heinemeier Hansson\",\"mailing_list_uri\":\"http://groups.google.com/group/rubyonrails-talk\",\"documentation_uri\":\"http://api.rubyonrails.org\",\"wiki_uri\":\"http://wiki.rubyonrails.org\"}"
+    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionmailer\",\"requirements\":\"= 3.1.0\"},{\"name\":\"actionpack\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activerecord\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activeresource\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activesupport\",\"requirements\":\"= 3.1.0\"},{\"name\":\"bundler\",\"requirements\":\"~> 1.0\"},{\"name\":\"railties\",\"requirements\":\"= 3.1.0\"}],\"development\":[]},\"name\":\"rails\",\"downloads\":5541246,\"info\":\"Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration.\",\"version_downloads\":158128,\"version\":\"3.1.0\",\"homepage_uri\":\"http://www.rubyonrails.org\",\"bug_tracker_uri\":\"http://rails.lighthouseapp.com/projects/8994-ruby-on-rails\",\"source_code_uri\":\"http://github.com/rails/rails\",\"gem_uri\":\"http://rubygems.org/gems/rails-3.1.0.gem\",\"project_uri\":\"http://rubygems.org/gems/rails\",\"authors\":\"David Heinemeier Hansson\",\"mailing_list_uri\":\"http://groups.google.com/group/rubyonrails-talk\",\"documentation_uri\":\"http://api.rubyonrails.org\",\"wiki_uri\":\"http://wiki.rubyonrails.org\"}"
     http_version: "1.1"
