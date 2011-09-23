@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('rake', '>= 0.8.7')
+  s.add_dependency('bundler', '~> 1.0.0')
 
   s.add_development_dependency('rspec' , '~> 2.6.0')
   s.add_development_dependency('mocha' , '~> 0.10.0')
