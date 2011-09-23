@@ -8,11 +8,11 @@ namespace :gemlock do
 
   desc 'lists out of date gems'
   task :outdated => :environment do
-    oudated = Gemlock.outdated
-    if oudated.empty?
+    outdated = Gemlock.outdated
+    if outdated.empty?
       puts "All gems up to date!"
     else
-      oudated.each_pair do |name, versions|
+      outdated.each_pair do |name, versions|
         puts "#{name} is out of date!"
         puts "Installed version: #{versions[:current]}. Latest version: #{versions[:latest]}"
       end
