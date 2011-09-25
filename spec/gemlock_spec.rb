@@ -36,30 +36,30 @@ describe Gemlock do
   end
 
   describe "#lookup_version" do
+    use_vcr_cassette
+
     it "should look up and return the latest version of a given gem" do
-      VCR.use_cassette('rails_cassette') do
-        version = Gemlock.lookup_version("rails")
-        version.should eql "3.1.0"
-      end
+      version = Gemlock.lookup_version("rails")
+      version.should eql "3.1.0"
     end
   end
 
   describe "#outdated" do
+    use_vcr_cassette
+
     it "should return an array of outdated gem specifications" do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
-      VCR.use_cassette('outdated_cassette') do
-        expected = {'coffee-rails' => { :current => '3.1.0',
-                                        :latest  => '3.1.1' },
-                    'sass-rails'   => { :current => '3.1.0',
-                                        :latest  => '3.1.2' },
-                    'unicorn'      => { :current => '4.1.0',
-                                        :latest  => '4.1.1' },
-                    'json'         => { :current => '1.5.0',
-                                        :latest  => '1.6.1' } }
+      expected = {'coffee-rails' => { :current => '3.1.0',
+                                      :latest  => '3.1.1' },
+                  'sass-rails'   => { :current => '3.1.0',
+                                      :latest  => '3.1.2' },
+                  'unicorn'      => { :current => '4.1.0',
+                                      :latest  => '4.1.1' },
+                  'json'         => { :current => '1.5.0',
+                                      :latest  => '1.6.1' } }
 
-        Gemlock.outdated.should eql expected
-      end
+      Gemlock.outdated.should eql expected
     end
   end
 end
