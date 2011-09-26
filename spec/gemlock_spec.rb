@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Gemlock do
   describe "#locked_gemfile_specs" do
-    it "should output the list of gems & version requirements" do
+    it "outputs the list of gems & version requirements" do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
       specs = Gemlock.locked_gemfile_specs
@@ -17,7 +17,7 @@ describe Gemlock do
   end
 
   describe "#lockfile" do
-    it "should load Gemfile.lock from the Rails root if Rails is defined" do
+    it "loads Gemfile.lock from the Rails root if Rails is defined" do
       module Rails
         def self.root
           Pathname.new(File.dirname(__FILE__))
@@ -28,7 +28,7 @@ describe Gemlock do
       Gemlock.lockfile.should eql expected_path
     end
 
-    it "should load Gemfile.lock from the default Bundler location if Rails is not defined" do
+    it "loads Gemfile.lock from the default Bundler location if Rails is not defined" do
       expected_path = Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), 'Gemfile.lock')))
 
       Gemlock.lockfile.should eql expected_path
@@ -38,7 +38,7 @@ describe Gemlock do
   describe "#lookup_version" do
     use_vcr_cassette
 
-    it "should look up and return the latest version of a given gem" do
+    it "looks up and return the latest version of a given gem" do
       version = Gemlock.lookup_version("rails")
       version.should eql "3.1.0"
     end
@@ -47,7 +47,7 @@ describe Gemlock do
   describe "#outdated" do
     use_vcr_cassette
 
-    it "should return an array of outdated gem specifications" do
+    it "returns an array of outdated gem specifications" do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
       expected = {'coffee-rails' => { :current => '3.1.0',
