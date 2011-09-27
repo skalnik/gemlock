@@ -47,7 +47,7 @@ describe Gemlock do
   describe "#outdated" do
     use_vcr_cassette
 
-    it "returns an array of outdated gem specifications" do
+    it "returns a hash of outdated gems & versions" do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
       expected = {'coffee-rails' => { :current => '3.1.0',
