@@ -15,7 +15,11 @@ namespace :gemlock do
       outdated.each_pair do |name, versions|
         puts "#{name} is out of date!"
         puts "Installed version: #{versions[:current]}. Latest version: #{versions[:latest]}"
+        puts "To update: bundle update #{name}"
       end
+      puts ""
+      puts "To update all your gems via bundler:"
+      puts "bundle update"
     end
   end
 end
