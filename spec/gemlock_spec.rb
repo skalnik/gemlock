@@ -20,16 +20,20 @@ describe Gemlock do
     it "loads Gemfile.lock from the Rails root if Rails is defined" do
       module Rails
         def self.root
-          Pathname.new(File.dirname(__FILE__))
+          Pathname.new(File.expand_path('fixtures', File.dirname(__FILE__)))
         end
       end
 
-      expected_path = Pathname.new(File.dirname(__FILE__)).join('Gemfile.lock')
+      expected_path = Pathname.new(File.expand_path(File.join('fixtures', 'Gemfile.lock'),
+                                                    File.dirname(__FILE__)))
       Gemlock.lockfile.should eql expected_path
+
+      # Undefine Rails module
+      Object.send(:remove_const, :Rails)
     end
 
     it "loads Gemfile.lock from the default Bundler location if Rails is not defined" do
-      expected_path = Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), 'Gemfile.lock')))
+      expected_path = Pathname.new(File.expand_path(File.join('spec', 'fixtures', 'Gemfile.lock')))
 
       Gemlock.lockfile.should eql expected_path
     end
