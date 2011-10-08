@@ -66,4 +66,39 @@ describe Gemlock do
       Gemlock.outdated.should eql expected
     end
   end
+
+  describe "#config_file" do
+    it "loads gemlock.yml from the config directory if Rails is defined" do
+      module Rails
+        def self.root
+          Pathname.new(File.dirname(__FILE__))
+        end
+      end
+
+      expected_path = Pathname.new(File.dirname(__FILE__)).join('config', 'gemlock.yml')
+      Gemlock.config_file.should eql expected_path
+
+      # Undefine Rails module
+      Object.send(:remove_const, :Rails)
+
+    end
+
+    it "is nil if Rails is not defined" do
+      Gemlock.config_file.should be_nil
+    end
+  end
+
+  describe "#parsed_config" do
+    it "returns nil if the config_file is not defined" do
+      Gemlock.parsed_config.should be_nil
+    end
+
+    it "returns a hash containing the user's email if config_file is defined" do
+      Gemlock.stubs(:config_file).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
+
+      expected = {'email' => "tester@example.com"}
+
+      Gemlock.parsed_config.should eql expected
+    end
+  end
 end

@@ -1,6 +1,7 @@
 require "bundler"
 require "rest_client"
 require "json"
+require "yaml"
 
 require "gemlock/version"
 
@@ -53,6 +54,20 @@ module Gemlock
       end
 
       return_hash
+    end
+
+    def config_file
+      config_file = nil
+      config_file = if defined?(Rails)
+                      Rails.root.join('config', 'gemlock.yml')
+                    end
+    end
+
+    def parsed_config
+      parsed_config = nil
+      if(config_file)
+        parsed_config = YAML.load_file(config_file)
+      end
     end
   end
 end
