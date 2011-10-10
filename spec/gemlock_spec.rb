@@ -102,11 +102,13 @@ describe Gemlock do
 
   describe "#difference" do
     it "returns 'major' if there is a major version difference between the two gem versions" do
+      Gemlock.difference("2.0.0",  "3.0.0").should eql "major"
       Gemlock.difference("2.5.10", "3.1.0").should eql "major"
     end
 
     it "returns 'minor' if there is a minor version difference between the two gem versions" do
       Gemlock.difference("3.0.0", "3.1.0").should eql "minor"
+      Gemlock.difference("3.1.0", "3.2.1").should eql "minor"
     end
 
     it "returns 'patch' if there is a patch version difference between the two gem versions" do
