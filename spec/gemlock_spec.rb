@@ -112,6 +112,5 @@ describe Gemlock do
     it "returns 'patch' if there is a patch version difference between the two gem versions" do
       Gemlock.difference("3.1.0", "3.1.1").should eql "patch"
     end
-
   end
 end
