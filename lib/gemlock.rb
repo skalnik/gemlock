@@ -69,5 +69,20 @@ module Gemlock
         parsed_config = YAML.load_file(config_file)
       end
     end
+
+    def difference(local_version, gem_version)
+      locMajor, locMinor, locPatch = local_version.split('.')
+      gemMajor, gemMinor, gemPatch = gem_version.split('.')
+      if gemMajor>locMajor
+        #Major release
+        return "major"
+      elsif gemMinor>locMinor
+        #Minor release
+        return "minor"
+      elsif gemPatch>locPatch
+        #Patch release
+        return "patch"
+      end
+    end
   end
 end
