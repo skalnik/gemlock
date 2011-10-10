@@ -71,17 +71,15 @@ module Gemlock
     end
 
     def difference(local_version, gem_version)
-      locMajor, locMinor, locPatch = local_version.split('.')
-      gemMajor, gemMinor, gemPatch = gem_version.split('.')
-      if gemMajor>locMajor
-        #Major release
-        return "major"
-      elsif gemMinor>locMinor
-        #Minor release
-        return "minor"
-      elsif gemPatch>locPatch
-        #Patch release
-        return "patch"
+      lock_major, lock_minor, lock_patch = local_version.split('.')
+      gem_major, gem_minor, gem_patch = gem_version.split('.')
+
+      if gem_major > lock_major
+        "major"
+      elsif gem_minor > lock_minor
+        "minor"
+      elsif gem_patch>lock_patch
+        "patch"
       end
     end
   end
