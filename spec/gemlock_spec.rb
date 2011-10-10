@@ -96,9 +96,7 @@ describe Gemlock do
     it "returns a hash containing the user's email if config_file is defined" do
       Gemlock.stubs(:config_file).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
 
-      expected = {'email' => "tester@example.com"}
-
-      Gemlock.parsed_config.should eql expected
+      Gemlock.parsed_config["email"].should eql "tester@example.com"
     end
   end
 
