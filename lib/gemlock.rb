@@ -41,8 +41,11 @@ module Gemlock
       outdated = {}
       locked_gemfile_specs.each do |spec|
         latest_version = lookup_version(spec.name)
+        update_type = difference(spec.version.to_s, latest_version)
         if Gem::Version.new(latest_version) > Gem::Version.new(spec.version)
-          outdated[spec.name] = latest_version
+          if parsed_config.nil? || parsed_config['releases'].include?(update_type)
+            outdated[spec.name] = latest_version
+          end
         end
         hash
       end
