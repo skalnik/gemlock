@@ -69,7 +69,7 @@ describe Gemlock do
     end
 
     it "returns a hash of outdated gems & versions specificed in config" do
-      Gemlock.stubs(:config_file).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
+      Gemlock.stubs(:config).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
 
       expected = {'coffee-rails' => { :current => '3.1.0',
                                       :latest  => '3.1.1' },
@@ -82,7 +82,7 @@ describe Gemlock do
     end
   end
 
-  describe "#config_file" do
+  describe "#config" do
     it "loads gemlock.yml from the config directory if Rails is defined" do
       module Rails
         def self.root
@@ -91,7 +91,7 @@ describe Gemlock do
       end
 
       expected_path = Pathname.new(File.dirname(__FILE__)).join('config', 'gemlock.yml')
-      Gemlock.config_file.should eql expected_path
+      Gemlock.config.should eql expected_path
 
       # Undefine Rails module
       Object.send(:remove_const, :Rails)
@@ -99,17 +99,17 @@ describe Gemlock do
     end
 
     it "is nil if Rails is not defined" do
-      Gemlock.config_file.should be_nil
+      Gemlock.config.should be_nil
     end
   end
 
   describe "#parsed_config" do
-    it "returns nil if the config_file is not defined" do
+    it "returns nil if the config file is not present" do
       Gemlock.parsed_config.should be_nil
     end
 
-    it "returns a hash containing the user's email if config_file is defined" do
-      Gemlock.stubs(:config_file).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
+    it "returns a hash containing the user's email if config file is present" do
+      Gemlock.stubs(:config).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
 
       Gemlock.parsed_config["email"].should eql "tester@example.com"
     end

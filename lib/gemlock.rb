@@ -59,17 +59,17 @@ module Gemlock
       return_hash
     end
 
-    def config_file
-      config_file = nil
-      config_file = if defined?(Rails)
-                      Rails.root.join('config', 'gemlock.yml')
-                    end
+    def config
+      config = nil
+      config = if defined?(Rails)
+                 Rails.root.join('config', 'gemlock.yml')
+               end
     end
 
     def parsed_config
       parsed_config = nil
-      if(config_file)
-        parsed_config = YAML.load_file(config_file)
+      if(config)
+        parsed_config = YAML.load_file(config)
       end
     end
 
