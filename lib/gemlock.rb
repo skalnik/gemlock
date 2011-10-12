@@ -83,6 +83,8 @@ module Gemlock
         "minor"
       elsif (patch_a - patch_b).abs > 0
         "patch"
+      else
+        "none"
       end
     end
   end

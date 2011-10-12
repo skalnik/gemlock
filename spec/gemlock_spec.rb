@@ -132,5 +132,12 @@ describe Gemlock do
       Gemlock.difference("3.1.0", "3.1.1").should eql "patch"
       Gemlock.difference("0.0.2", "0.0.1").should eql "patch"
     end
+
+    it "returns 'none' if there is no difference" do
+      Gemlock.difference("0.0.0", "0.0.0").should eql "none"
+      Gemlock.difference("0.0.1", "0.0.1").should eql "none"
+      Gemlock.difference("0.1.0", "0.1.0").should eql "none"
+      Gemlock.difference("1.0.0", "1.0.0").should eql "none"
+    end
   end
 end
