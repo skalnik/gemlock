@@ -60,17 +60,13 @@ module Gemlock
     end
 
     def config
-      config = nil
-      config = if defined?(Rails)
-                 Rails.root.join('config', 'gemlock.yml')
-               end
+      if defined?(Rails) && File.exists?(Rails.root.join('config', 'gemlock.yml'))
+        Rails.root.join('config', 'gemlock.yml')
+      end
     end
 
     def parsed_config
-      parsed_config = nil
-      if(config)
-        parsed_config = YAML.load_file(config)
-      end
+      YAML.load_file(config) if config
     end
 
     def difference(version_a, version_b)

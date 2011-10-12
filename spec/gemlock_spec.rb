@@ -89,8 +89,9 @@ describe Gemlock do
           Pathname.new(File.dirname(__FILE__))
         end
       end
-
       expected_path = Pathname.new(File.dirname(__FILE__)).join('config', 'gemlock.yml')
+      File.stubs(:exists?).with(expected_path).returns(true)
+
       Gemlock.config.should eql expected_path
 
       # Undefine Rails module
@@ -98,7 +99,19 @@ describe Gemlock do
 
     end
 
-    it "is nil if Rails is not defined" do
+    it "is nil if Rails is defined and the files does not exist" do
+      module Rails
+        def self.root
+          Pathname.new(File.dirname(__FILE__))
+        end
+      end
+
+      Gemlock.parsed_config.should be_nil
+
+      Object.send(:remove_const, :Rails)
+    end
+
+    it "is nil if Rails is not defined and the file exists" do
       Gemlock.config.should be_nil
     end
   end
