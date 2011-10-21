@@ -19,6 +19,11 @@ Gemlock looks at what gems you've specified in your Gemfile, checks the version
 that that Bundler has set in Gemfile.lock, and lets you know if there's a newer
 version available.
 
+If you're using Gemlock in a Rails project, whenever you start your server,
+Gemlock will check for updates. Then, it will check again in 2 weeks or when
+you restart your server, whichever comes first. In the future, both of these
+should be configurable options.
+
 Installation
 ------------
 
