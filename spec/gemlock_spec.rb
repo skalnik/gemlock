@@ -198,4 +198,30 @@ describe Gemlock do
   ensure
     $stdout = STDOUT
   end
+
+  describe "#update_interval" do
+    it "returns the number of seconds in a week if config_file is not present, or interval is not specified" do
+      Gemlock.update_interval.should eql 60*60*24*7
+    end
+
+    it "returns the number of seconds until the next number of hours as given" do
+      Gemlock.stubs(:parsed_config).returns({"interval" => ["8 hours"]})
+      Gemlock.update_interval.should eql 60*60*8
+    end
+
+    it "returns the number of seconds until the next number of days as given" do
+      Gemlock.stubs(:parsed_config).returns({"interval" => ["4 days"]})
+      Gemlock.update_interval.should eql 60*60*24*4
+    end
+
+    it "returns the number of seconds until the next number of weeks as given" do
+      Gemlock.stubs(:parsed_config).returns({"interval" => ["2 weeks"]})
+      Gemlock.update_interval.should eql 60*60*24*7*2
+    end
+
+    it "returns the number of seconds unil the next number of months as given" do
+      Gemlock.stubs(:parsed_config).returns({"interval" => ["3 months"]})
+      Gemlock.update_interval.should eql 60*60*24*30*3
+    end
+  end
 end
