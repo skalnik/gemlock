@@ -83,5 +83,29 @@ module Gemlock
         "none"
       end
     end
+
+    # By default, check for updates every 2 weeks
+    def initializer(update_interval = 60*60*24*7*2)
+      Thread.new(update_interval) do |interval|
+        loop do
+          puts "Checking for gem updates..."
+          outdated = Gemlock.outdated
+          if outdated.empty?
+            puts "All gems up to date!"
+          else
+            outdated.each_pair do |name, versions|
+              puts "#{name} is out of date!"
+              puts "Installed version: #{versions[:current]}. Latest version: #{versions[:latest]}"
+              puts "To update: bundle update #{name}"
+            end
+            puts ""
+            puts "To update all your gems via bundler:"
+            puts "bundle update"
+          end
+          puts "Checking for updates again in #{interval} seconds"
+          sleep interval
+        end
+      end
+    end
   end
 end

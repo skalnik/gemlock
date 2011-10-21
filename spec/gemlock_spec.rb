@@ -153,4 +153,49 @@ describe Gemlock do
       Gemlock.difference("1.0.0", "1.0.0").should eql "none"
     end
   end
+
+  describe '#initializer' do
+    it "makes a thread" do
+      Gemlock.stubs(:outdated).returns([])
+
+      capture_stdout do
+        @thread = Gemlock.initializer
+
+        @thread.class.should eql Thread
+        @thread.kill
+      end
+    end
+
+    it "checks for updates" do
+      Gemlock.expects(:outdated).returns([])
+
+      capture_stdout do
+        @thread = Gemlock.initializer
+
+        while @thread.status != 'sleep' do
+          sleep 0.5
+        end
+        @thread.kill
+      end
+    end
+
+    it "sleeps for the given amount of time" do
+      Gemlock.stubs(:outdated).returns([])
+      Kernel.expects(:sleep).with(1).at_least(1)
+
+      capture_stdout do
+        @thread = Gemlock.initializer(1)
+        sleep 1.5
+      end
+    end
+  end
+
+  def capture_stdout
+    io = StringIO.new
+    $stdout = io
+    yield
+    return io
+  ensure
+    $stdout = STDOUT
+  end
 end
