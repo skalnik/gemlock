@@ -26,6 +26,16 @@ module Gemlock
       locked_gemfile_specs.delete_if { |spec| !gemfile_names.include?(spec.name) }
     end
 
+    def config
+      if defined?(Rails) && File.exists?(Rails.root.join('config', 'gemlock.yml'))
+        Rails.root.join('config', 'gemlock.yml')
+      end
+    end
+
+    def parsed_config
+      YAML.load_file(config) if config
+    end
+
     def lookup_version(name)
       json_hash = JSON.parse(RestClient.get("http://rubygems.org/api/v1/gems/#{name}.json"))
 
@@ -57,16 +67,6 @@ module Gemlock
       end
 
       return_hash
-    end
-
-    def config
-      if defined?(Rails) && File.exists?(Rails.root.join('config', 'gemlock.yml'))
-        Rails.root.join('config', 'gemlock.yml')
-      end
-    end
-
-    def parsed_config
-      YAML.load_file(config) if config
     end
 
     def difference(version_a, version_b)
