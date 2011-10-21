@@ -181,11 +181,11 @@ describe Gemlock do
 
     it "sleeps for the given amount of time" do
       Gemlock.stubs(:outdated).returns([])
-      Kernel.expects(:sleep).with(1).at_least(1)
+      Gemlock.expects(:sleep).with(1).at_least(1)
 
       capture_stdout do
         @thread = Gemlock.initializer(1)
-        sleep 1.5
+        sleep 1
       end
     end
   end

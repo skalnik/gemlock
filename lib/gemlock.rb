@@ -107,5 +107,9 @@ module Gemlock
         end
       end
     end
+
+    def sleep(length)
+      Kernel.sleep(length)
+    end
   end
 end
