@@ -178,16 +178,6 @@ describe Gemlock do
         @thread.kill
       end
     end
-
-    it "sleeps for the given amount of time" do
-      Gemlock.stubs(:outdated).returns([])
-      Gemlock.expects(:sleep).with(1).at_least(1)
-
-      capture_stdout do
-        @thread = Gemlock.initializer(1)
-        sleep 1
-      end
-    end
   end
 
   def capture_stdout
