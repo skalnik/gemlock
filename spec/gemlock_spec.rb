@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Gemlock do
-  describe "#locked_gemfile_specs" do
+  describe ".locked_gemfile_specs" do
     it "outputs the list of gems & version requirements" do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
@@ -16,7 +16,7 @@ describe Gemlock do
     end
   end
 
-  describe "#lockfile" do
+  describe ".lockfile" do
     it "loads Gemfile.lock from the Rails root if Rails is defined" do
       module Rails
         def self.root
@@ -39,7 +39,7 @@ describe Gemlock do
     end
   end
 
-  describe "#lookup_version" do
+  describe ".lookup_version" do
     use_vcr_cassette
 
     it "looks up and return the latest version of a given gem" do
@@ -48,7 +48,7 @@ describe Gemlock do
     end
   end
 
-  describe "#outdated" do
+  describe ".outdated" do
     use_vcr_cassette
 
     before do
@@ -82,7 +82,7 @@ describe Gemlock do
     end
   end
 
-  describe "#config" do
+  describe ".config" do
     it "loads gemlock.yml from the config directory if Rails is defined" do
       module Rails
         def self.root
@@ -116,7 +116,7 @@ describe Gemlock do
     end
   end
 
-  describe "#parsed_config" do
+  describe ".parsed_config" do
     it "returns nil if the config file is not present" do
       Gemlock.parsed_config.should be_nil
     end
@@ -128,7 +128,7 @@ describe Gemlock do
     end
   end
 
-  describe "#difference" do
+  describe ".difference" do
     it "returns 'major' if there is a major version difference between the two gem versions" do
       Gemlock.difference("2.0.0",  "3.0.0").should eql "major"
       Gemlock.difference("2.5.10", "3.1.0").should eql "major"
@@ -155,7 +155,7 @@ describe Gemlock do
     end
   end
 
-  describe '#initializer' do
+  describe '.initializer' do
     it "makes a thread" do
       Gemlock.stubs(:outdated).returns([])
 
@@ -181,7 +181,7 @@ describe Gemlock do
     end
   end
 
-  describe "#process_version" do
+  describe ".process_version" do
     it "splits a version string into an array" do
       Gemlock.send(:process_version, "3.0.0").class.should eql Array
     end
@@ -192,16 +192,7 @@ describe Gemlock do
     end
   end
 
-  def capture_stdout
-    io = StringIO.new
-    $stdout = io
-    yield
-    return io
-  ensure
-    $stdout = STDOUT
-  end
-
-  describe "#update_interval" do
+  describe ".update_interval" do
     it "returns the number of seconds in a week if config_file is not present, or interval is not specified" do
       Gemlock.update_interval.should eql 60*60*24*7
 
@@ -228,5 +219,14 @@ describe Gemlock do
       Gemlock.stubs(:parsed_config).returns({"interval" => ["3 months"]})
       Gemlock.update_interval.should eql 60*60*24*30*3
     end
+  end
+
+  def capture_stdout
+    io = StringIO.new
+    $stdout = io
+    yield
+    return io
+  ensure
+    $stdout = STDOUT
   end
 end
