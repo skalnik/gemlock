@@ -133,6 +133,7 @@ describe Gemlock do
       Gemlock.difference("2.0.0",  "3.0.0").should eql "major"
       Gemlock.difference("2.5.10", "3.1.0").should eql "major"
       Gemlock.difference("3.1.10", "2.5.8").should eql "major"
+      Gemlock.difference("3.0",    "2.0"  ).should eql "major"
     end
 
     it "returns 'minor' if there is a minor version difference between the two gem versions" do
@@ -187,6 +188,17 @@ describe Gemlock do
         @thread = Gemlock.initializer(1)
         sleep 1
       end
+    end
+  end
+
+  describe "#process_version" do
+    it "splits a version string into an array" do
+      Gemlock.send(:process_version, "3.0.0").class.should eql Array
+    end
+
+    it "appends missing zeros to the end of a version if not given" do
+      Gemlock.send(:process_version, "3").should eql [3, 0, 0]
+      Gemlock.send(:process_version, "3.0").should eql [3, 0, 0]
     end
   end
 

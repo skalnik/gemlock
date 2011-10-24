@@ -70,8 +70,8 @@ module Gemlock
     end
 
     def difference(version_a, version_b)
-      major_a, minor_a, patch_a = version_a.split('.').collect(&:to_i)
-      major_b, minor_b, patch_b = version_b.split('.').collect(&:to_i)
+      major_a, minor_a, patch_a = process_version(version_a)
+      major_b, minor_b, patch_b = process_version(version_b)
 
       if (major_a - major_b).abs > 0
         "major"
@@ -106,6 +106,20 @@ module Gemlock
           sleep interval
         end
       end
+    end
+
+  private
+
+    def process_version(version_string)
+      version = version_string.split('.').collect(&:to_i)
+
+      if version.length < 3
+        (3 - version.length).times do
+          version << 0
+        end
+      end
+
+      version
     end
 
     def sleep(length)
