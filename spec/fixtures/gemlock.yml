@@ -2,3 +2,5 @@ email: tester@example.com
 releases:
   - major
   - patch
+interval:
+  - 2 weeks

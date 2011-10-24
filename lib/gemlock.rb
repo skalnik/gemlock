@@ -85,7 +85,8 @@ module Gemlock
     end
 
     # By default, check for updates every 2 weeks
-    def initializer(update_interval = 60*60*24*7*2)
+    def initializer
+      update_interval = Gemlock.update_interval
       Thread.new(update_interval) do |interval|
         loop do
           puts "Checking for gem updates..."
@@ -106,6 +107,30 @@ module Gemlock
           sleep interval
         end
       end
+    end
+
+    def update_interval
+      if parsed_config
+        if interval = parsed_config["interval"][0]
+          num_hours = interval.match(/\d*/)[0].to_i
+          if interval =~ /hour/
+            delay = 60*60
+          elsif interval =~ /day/
+            delay = 60*60*24
+          elsif interval =~ /week/
+            delay = 60*60*24*7
+          elsif interval =~ /month/
+            delay = 60*60*24*30
+          end
+          if delay && num_hours > 0
+            delay *= num_hours
+            return delay
+          elsif delay
+            return delay
+          end
+        end
+      end
+      60*60*24*7 #Seconds in a week
     end
 
   private
