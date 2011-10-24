@@ -111,7 +111,9 @@ module Gemlock
 
     def update_interval
       if parsed_config
-        if interval = parsed_config["interval"][0]
+        if parsed_config["interval"]
+          interval = parsed_config["interval"][0]
+
           num_hours = interval.match(/\d*/)[0].to_i
           if interval =~ /hour/
             delay = 60*60

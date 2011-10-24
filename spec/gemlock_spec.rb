@@ -204,6 +204,9 @@ describe Gemlock do
   describe "#update_interval" do
     it "returns the number of seconds in a week if config_file is not present, or interval is not specified" do
       Gemlock.update_interval.should eql 60*60*24*7
+
+      Gemlock.stubs(:parsed_config).returns({"email"=>"tester@example.com"})
+      Gemlock.update_interval.should eql 60*60*24*7
     end
 
     it "returns the number of seconds until the next number of hours as given" do
