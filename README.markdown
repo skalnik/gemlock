@@ -30,3 +30,19 @@ Installation
 1. Add `gem 'gemlock'` to your `Gemfile`
 2. Run `bundle install`
 3. If you're using Rails, you're done! Otherwise, add `require 'gemlock/rake_tasks'` to your Rakefile
+
+Configuration
+-------------
+
+Configuration options should be placed in the file config/gemlock.yml. Currently
+Gemlock does not auto-create this file, so for the moment you will need to create
+the file by hand. The only configuration options that are used currently are the 
+'interval' field which tells Gemlock how often to check for updates, and the 
+'releases' field which lets the user specify what types of gem updates they would
+like to be notified about. An example of gemlock.yml would look like:
+
+    releases:
+      -minor
+      -patch
+    interval:
+      - 2 weeks
