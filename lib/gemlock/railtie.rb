@@ -8,7 +8,7 @@ module Gemlock
     end
 
     initializer 'Check for updates using Gemlock' do
-      Gemlock.initializer
+      Gemlock.initializer if Rails.env.production?
     end
   end
 end
