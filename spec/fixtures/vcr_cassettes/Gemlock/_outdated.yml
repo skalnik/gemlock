@@ -1,334 +1,298 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/coffee-rails.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/coffee-rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"8617a792c13fd41114f6625f9c5229af\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.017452"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:36 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
-      - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"coffee-script\",\"requirements\":\">= 2.2.0\"},{\"name\":\"railties\",\"requirements\":\"~> 3.1.0\"}],\"development\":[]},\"name\":\"coffee-rails\",\"downloads\":148621,\"info\":\"Coffee Script adapter for the Rails asset pipeline.\",\"version_downloads\":51387,\"version\":\"3.1.1\",\"homepage_uri\":\"\",\"bug_tracker_uri\":\"\",\"source_code_uri\":\"https://github.com/rails/coffee-rails\",\"gem_uri\":\"http://rubygems.org/gems/coffee-rails-3.1.1.gem\",\"project_uri\":\"http://rubygems.org/gems/coffee-rails\",\"authors\":\"Santiago Pastorino\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"e48bc9e9a623234be1d8911ffbbdd8bc"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.261532'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      content-length:
+      - '19'
+      connection:
+      - keep-alive
+    body: ! '{"version":"3.1.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/jquery-rails.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/jquery-rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"0a33d8c12b5bdd770bb6acae9c3db6bf\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.020328"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
-      - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"railties\",\"requirements\":\"~> 3.0\"},{\"name\":\"thor\",\"requirements\":\"~> 0.14\"}],\"development\":[{\"name\":\"bundler\",\"requirements\":\"~> 1.0.0\"},{\"name\":\"rails\",\"requirements\":\"~> 3.0\"}]},\"name\":\"jquery-rails\",\"downloads\":807842,\"info\":\"This gem provides jQuery and the jQuery-ujs driver for your Rails 3 application.\",\"version_downloads\":90622,\"version\":\"1.0.14\",\"homepage_uri\":\"http://rubygems.org/gems/jquery-rails\",\"bug_tracker_uri\":\"https://github.com/rails/jquery-rails/issues\",\"source_code_uri\":\"https://github.com/rails/jquery-rails\",\"gem_uri\":\"http://rubygems.org/gems/jquery-rails-1.0.14.gem\",\"project_uri\":\"http://rubygems.org/gems/jquery-rails\",\"authors\":\"Andr\\u00e9 Arko\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"ce311130187e1fa77e0100a80a2b4e2d"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.081613'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      content-length:
+      - '20'
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.0.16"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/json.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/json/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"8a71fb297b6baf6a6589ec59e2975d66\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.019527"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"b72b98a3bea046b262dba7c036cd90af"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.095792'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[],\"development\":[{\"name\":\"bullshit\",\"requirements\":\">= 0\"},{\"name\":\"permutation\",\"requirements\":\">= 0\"},{\"name\":\"sdoc\",\"requirements\":\">= 0\"}]},\"name\":\"json\",\"downloads\":2574832,\"info\":\"This is a JSON implementation as a Ruby extension in C.\",\"version_downloads\":35588,\"version\":\"1.6.1\",\"homepage_uri\":\"http://flori.github.com/json\",\"bug_tracker_uri\":\"http://github.com/flori/json/issues\",\"source_code_uri\":\"http://flori.github.com/json/\",\"gem_uri\":\"http://rubygems.org/gems/json-1.6.1.gem\",\"project_uri\":\"http://rubygems.org/gems/json\",\"authors\":\"Florian Frank\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"http://flori.github.com/json/doc/index.html\",\"wiki_uri\":\"\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.6.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/rails.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"5b9a3bfd4342827b3f980cb8f7ac90d4\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.021418"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"e48bc9e9a623234be1d8911ffbbdd8bc"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.036095'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionmailer\",\"requirements\":\"= 3.1.0\"},{\"name\":\"actionpack\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activerecord\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activeresource\",\"requirements\":\"= 3.1.0\"},{\"name\":\"activesupport\",\"requirements\":\"= 3.1.0\"},{\"name\":\"bundler\",\"requirements\":\"~> 1.0\"},{\"name\":\"railties\",\"requirements\":\"= 3.1.0\"}],\"development\":[]},\"name\":\"rails\",\"downloads\":5563606,\"info\":\"Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration.\",\"version_downloads\":168699,\"version\":\"3.1.0\",\"homepage_uri\":\"http://www.rubyonrails.org\",\"bug_tracker_uri\":\"http://rails.lighthouseapp.com/projects/8994-ruby-on-rails\",\"source_code_uri\":\"http://github.com/rails/rails\",\"gem_uri\":\"http://rubygems.org/gems/rails-3.1.0.gem\",\"project_uri\":\"http://rubygems.org/gems/rails\",\"authors\":\"David Heinemeier Hansson\",\"mailing_list_uri\":\"http://groups.google.com/group/rubyonrails-talk\",\"documentation_uri\":\"http://api.rubyonrails.org\",\"wiki_uri\":\"http://wiki.rubyonrails.org\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      connection:
+      - keep-alive
+    body: ! '{"version":"3.1.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/ruby-debug.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/ruby-debug/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"210801ca92754af8466240a53c948d81\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.150923"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"e444d5094868df5925e938d14cdb23b9"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.152282'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"columnize\",\"requirements\":\">= 0.1\"},{\"name\":\"ruby-debug-base\",\"requirements\":\"~> 0.10.4.0\"}],\"development\":[]},\"name\":\"ruby-debug\",\"downloads\":526808,\"info\":\"A generic command line interface for ruby-debug.\\n\",\"version_downloads\":300078,\"version\":\"0.10.4\",\"homepage_uri\":\"http://rubyforge.org/projects/ruby-debug/\",\"bug_tracker_uri\":null,\"source_code_uri\":null,\"gem_uri\":\"http://rubygems.org/gems/ruby-debug-0.10.4.gem\",\"project_uri\":\"http://rubygems.org/gems/ruby-debug\",\"authors\":\"Kent Sibilev\",\"mailing_list_uri\":null,\"documentation_uri\":null,\"wiki_uri\":null}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      connection:
+      - keep-alive
+    body: ! '{"version":"0.10.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/sass-rails.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/sass-rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"65f4791683b315d2362f9b23ee5bc4da\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.019185"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"412d8485398a9d5a18c2e6604442a6ae"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.060329'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"actionpack\",\"requirements\":\"~> 3.1.0\"},{\"name\":\"railties\",\"requirements\":\"~> 3.1.0\"},{\"name\":\"sass\",\"requirements\":\">= 3.1.4\"},{\"name\":\"sprockets\",\"requirements\":\"~> 2.0.0\"},{\"name\":\"tilt\",\"requirements\":\"~> 1.3.2\"}],\"development\":[]},\"name\":\"sass-rails\",\"downloads\":216333,\"info\":\"Sass adapter for the Rails asset pipeline.\",\"version_downloads\":39833,\"version\":\"3.1.2\",\"homepage_uri\":\"\",\"bug_tracker_uri\":\"https://github.com/rails/sass-rails/issues\",\"source_code_uri\":\"https://github.com/rails/sass-rails\",\"gem_uri\":\"http://rubygems.org/gems/sass-rails-3.1.2.gem\",\"project_uri\":\"http://rubygems.org/gems/sass-rails\",\"authors\":\"wycats, chriseppstein\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"https://github.com/rails/sass-rails/blob/master/README.markdown\",\"wiki_uri\":\"\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      connection:
+      - keep-alive
+    body: ! '{"version":"3.1.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/sqlite3.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/sqlite3/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"d734864523607f57a32faefa0f488e5f\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.019085"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"dbb196aab8808e02b0cb33aa4e6a3052"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.076052'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[],\"development\":[{\"name\":\"hoe\",\"requirements\":\"~> 2.10\"},{\"name\":\"mini_portile\",\"requirements\":\"~> 0.2.2\"},{\"name\":\"rake-compiler\",\"requirements\":\"~> 0.7.0\"}]},\"name\":\"sqlite3\",\"downloads\":1096156,\"info\":\"This module allows Ruby programs to interface with the SQLite3\\ndatabase engine (http://www.sqlite.org).  You must have the\\nSQLite engine installed in order to build this module.\\n\\nNote that this module is NOT compatible with SQLite 2.x.\",\"version_downloads\":258507,\"version\":\"1.3.4\",\"homepage_uri\":\"http://github.com/luislavena/sqlite3-ruby\",\"bug_tracker_uri\":null,\"source_code_uri\":null,\"gem_uri\":\"http://rubygems.org/gems/sqlite3-1.3.4.gem\",\"project_uri\":\"http://rubygems.org/gems/sqlite3\",\"authors\":\"Jamis Buck, Luis Lavena, Aaron Patterson\",\"mailing_list_uri\":null,\"documentation_uri\":null,\"wiki_uri\":null}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.3.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/uglifier.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/uglifier/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"672e41201c949086dd5c78f356473803\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.021295"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:37 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"939c95352a2d69888fb560ca5e5d8e71"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.099565'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"execjs\",\"requirements\":\">= 0.3.0\"},{\"name\":\"multi_json\",\"requirements\":\">= 1.0.2\"}],\"development\":[{\"name\":\"bundler\",\"requirements\":\"~> 1.0.0\"},{\"name\":\"jeweler\",\"requirements\":\"~> 1.6.0\"},{\"name\":\"rcov\",\"requirements\":\">= 0\"},{\"name\":\"rspec\",\"requirements\":\"~> 2.6.0\"}]},\"name\":\"uglifier\",\"downloads\":256826,\"info\":\"Ruby wrapper for UglifyJS JavaScript compressor\",\"version_downloads\":88545,\"version\":\"1.0.3\",\"homepage_uri\":\"http://github.com/lautis/uglifier\",\"bug_tracker_uri\":\"https://github.com/lautis/uglifier/issues\",\"source_code_uri\":\"https://github.com/lautis/uglifier\",\"gem_uri\":\"http://rubygems.org/gems/uglifier-1.0.3.gem\",\"project_uri\":\"http://rubygems.org/gems/uglifier\",\"authors\":\"Ville Lautanala\",\"mailing_list_uri\":\"\",\"documentation_uri\":\"\",\"wiki_uri\":\"\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.0.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://rubygems.org:80/api/v1/gems/unicorn.json
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    uri: http://gemlock.herokuapp.com:80/rubygems/unicorn/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"a6ab000a19e3f9a0b13715fba36ddea3\""
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.019786"
-      server: 
-      - Apache/2.2.3 (Red Hat) mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 Phusion_Passenger/3.0.0
-      date: 
-      - Sun, 25 Sep 2011 05:56:38 GMT
-      status: 
-      - "200"
-      cache-control: 
+    headers:
+      cache-control:
       - max-age=0, private, must-revalidate
-      transfer-encoding: 
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"37cd5df77bb485fe8e803759139301f7"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.091082'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
       - chunked
-    body: "{\"dependencies\":{\"runtime\":[{\"name\":\"kgio\",\"requirements\":\"~> 2.4\"},{\"name\":\"rack\",\"requirements\":\">= 0\"},{\"name\":\"raindrops\",\"requirements\":\"~> 0.6\"}],\"development\":[{\"name\":\"isolate\",\"requirements\":\"~> 3.1\"},{\"name\":\"wrongdoc\",\"requirements\":\"~> 1.6\"}]},\"name\":\"unicorn\",\"downloads\":405901,\"info\":\"\\\\Unicorn is an HTTP server for Rack applications designed to only serve\\nfast clients on low-latency, high-bandwidth connections and take\\nadvantage of features in Unix/Unix-like kernels.  Slow clients should\\nonly be served by placing a reverse proxy capable of fully buffering\\nboth the the request and response in between \\\\Unicorn and slow clients.\",\"version_downloads\":22397,\"version\":\"4.1.1\",\"homepage_uri\":\"http://unicorn.bogomips.org/\",\"bug_tracker_uri\":\"http://rubyforge.org/mailman/listinfo/mongrel-unicorn\",\"source_code_uri\":\"http://git.bogomips.org/cgit/unicorn.git\",\"gem_uri\":\"http://rubygems.org/gems/unicorn-4.1.1.gem\",\"project_uri\":\"http://rubygems.org/gems/unicorn\",\"authors\":\"Unicorn hackers\",\"mailing_list_uri\":\"http://rubyforge.org/mailman/listinfo/mongrel-unicorn\",\"documentation_uri\":\"http://unicorn.bogomips.org/\",\"wiki_uri\":\"\"}"
-    http_version: "1.1"
+      connection:
+      - keep-alive
+    body: ! '{"version":"4.1.1"}'
+    http_version: '1.1'

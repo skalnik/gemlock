@@ -6,10 +6,10 @@ describe Gemlock do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
 
       specs = Gemlock.locked_gemfile_specs
-      expected = [["coffee-rails", "3.1.0"], ["jquery-rails", "1.0.14"],
+      expected = [["coffee-rails", "3.1.0"], ["jquery-rails", "1.0.16"],
                   ["json",         "1.5.0"], ["rails",         "3.1.0"],
                   ["ruby-debug",  "0.10.4"], ["sass-rails",    "3.1.0"],
-                  ["sqlite3",      "1.3.4"], ["uglifier",      "1.0.3"],
+                  ["sqlite3",      "1.3.4"], ["uglifier",      "1.0.4"],
                   ["unicorn",      "3.1.0"]]
 
       specs.should match_name_and_versions_of expected
@@ -59,11 +59,13 @@ describe Gemlock do
       expected = {'coffee-rails' => { :current => '3.1.0',
                                       :latest  => '3.1.1' },
                   'sass-rails'   => { :current => '3.1.0',
-                                      :latest  => '3.1.2' },
+                                      :latest  => '3.1.4' },
                   'unicorn'      => { :current => '3.1.0',
                                       :latest  => '4.1.1' },
                   'json'         => { :current => '1.5.0',
-                                      :latest  => '1.6.1' } }
+                                      :latest  => '1.6.1' },
+                  'rails'        => { :current => '3.1.0',
+                                      :latest  => '3.1.1'} }
 
       Gemlock.outdated.should eql expected
     end
@@ -74,9 +76,11 @@ describe Gemlock do
       expected = {'coffee-rails' => { :current => '3.1.0',
                                       :latest  => '3.1.1' },
                   'sass-rails'   => { :current => '3.1.0',
-                                      :latest  => '3.1.2' },
+                                      :latest  => '3.1.4' },
                   'unicorn'      => { :current => '3.1.0',
-                                      :latest  => '4.1.1' } }
+                                      :latest  => '4.1.1' },
+                  'rails'        => { :current => '3.1.0',
+                                      :latest  => '3.1.1'} }
 
       Gemlock.outdated.should eql expected
     end
