@@ -37,7 +37,7 @@ module Gemlock
     end
 
     def lookup_version(name)
-      json_hash = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/rubygems/#{name}/latest.json"))
+      json_hash = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/ruby_gems/#{name}/latest.json"))
 
       return json_hash["version"]
     end
