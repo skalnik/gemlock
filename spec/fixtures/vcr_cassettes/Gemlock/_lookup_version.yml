@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://gemlock.herokuapp.com:80/rubygems/rails/latest.json
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/rails/latest.json
     body: !!null 
     headers:
       accept:
