@@ -48,25 +48,13 @@ module Gemlock
         specs[spec.name] = spec.version.to_s
       end
 
-      outdated = {}
-      locked_gemfile_specs.each do |spec|
-        latest_version = lookup_version(spec.name)
-        update_type = difference(spec.version.to_s, latest_version)
-        if Gem::Version.new(latest_version) > Gem::Version.new(spec.version)
-          if parsed_config.nil? || parsed_config['releases'].include?(update_type)
-            outdated[spec.name] = latest_version
-          end
-        end
+      response = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json", {:params => {:gems => specs.to_json}}))
+
+      outdated_gems.inject({}) do |hash, gem|
+        name, version = *gem
+        hash[name] = {:latest => version, :current => specs[name]}
         hash
       end
-
-      return_hash = {}
-      outdated.each_pair do |name, latest_version|
-        return_hash[name] = { :latest => latest_version,
-                              :current => specs[name] }
-      end
-
-      return_hash
     end
 
     def difference(version_a, version_b)

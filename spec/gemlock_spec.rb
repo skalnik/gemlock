@@ -79,6 +79,8 @@ describe Gemlock do
                                       :latest  => '3.1.4' },
                   'unicorn'      => { :current => '3.1.0',
                                       :latest  => '4.1.1' },
+                  'json'         => { :current => '1.5.0',
+                                      :latest  => '1.6.1' },
                   'rails'        => { :current => '3.1.0',
                                       :latest  => '3.1.1'} }
 
