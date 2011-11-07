@@ -50,7 +50,7 @@ module Gemlock
 
       response = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json", {:params => {:gems => specs.to_json}}))
 
-      outdated_gems.inject({}) do |hash, gem|
+      response.inject({}) do |hash, gem|
         name, version = *gem
         hash[name] = {:latest => version, :current => specs[name]}
         hash
