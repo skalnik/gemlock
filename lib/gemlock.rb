@@ -123,6 +123,26 @@ module Gemlock
       60*60*24*7 #Seconds in a week
     end
 
+    def check_gems_individually(gems)
+      outdated = {}
+
+      gems.each_pair do |name, version|
+        latest_version = lookup_version(name)
+        update_type = difference(version, latest_version)
+        if Gem::Version.new(latest_version) > Gem::Version.new(version)
+          if parsed_config.nil? || parsed_config['releases'].include?(update_type)
+            outdated[name] = latest_version
+          end
+        end
+      end
+
+      outdated.inject({}) do |hash, gem|
+        name, version = *gem
+        hash[name] = { :latest => version, :current => gems[name] }
+        hash
+      end
+    end
+
   private
 
     def process_version(version_string)

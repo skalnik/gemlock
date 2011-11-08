@@ -48,6 +48,30 @@ describe Gemlock do
     end
   end
 
+  describe ".check_gems_individually" do
+    use_vcr_cassette
+
+    it "returns a hash of outdated gems & versions specificed in config" do
+      Gemlock.stubs(:config).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
+
+      gems = Gemlock.locked_gemfile_specs.inject({}) do |hash, spec|
+        hash[spec.name] = spec.version.to_s
+        hash
+      end
+
+      expected = {'coffee-rails' => { :current => '3.1.0',
+                                      :latest  => '3.1.1' },
+                  'sass-rails'   => { :current => '3.1.0',
+                                      :latest  => '3.1.4' },
+                  'unicorn'      => { :current => '3.1.0',
+                                      :latest  => '4.1.1' },
+                  'rails'        => { :current => '3.1.0',
+                                      :latest  => '3.1.1'} }
+
+      Gemlock.check_gems_individually(gems).should eql expected
+    end
+  end
+
   describe ".outdated" do
     use_vcr_cassette
 
@@ -55,24 +79,7 @@ describe Gemlock do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
     end
 
-    it "returns a hash of all outdated gems & versions if no config is present" do
-      expected = {'coffee-rails' => { :current => '3.1.0',
-                                      :latest  => '3.1.1' },
-                  'sass-rails'   => { :current => '3.1.0',
-                                      :latest  => '3.1.4' },
-                  'unicorn'      => { :current => '3.1.0',
-                                      :latest  => '4.1.1' },
-                  'json'         => { :current => '1.5.0',
-                                      :latest  => '1.6.1' },
-                  'rails'        => { :current => '3.1.0',
-                                      :latest  => '3.1.1'} }
-
-      Gemlock.outdated.should eql expected
-    end
-
-    it "returns a hash of outdated gems & versions specificed in config" do
-      Gemlock.stubs(:config).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
-
+    it "returns a hash of all outdated gems" do
       expected = {'coffee-rails' => { :current => '3.1.0',
                                       :latest  => '3.1.1' },
                   'sass-rails'   => { :current => '3.1.0',
