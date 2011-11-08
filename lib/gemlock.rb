@@ -42,7 +42,7 @@ module Gemlock
       return json_hash["version"]
     end
 
-    def outdated
+    def outdated(automatic = false)
       specs = {}
       locked_gemfile_specs.each do |spec|
         specs[spec.name] = spec.version.to_s
@@ -56,7 +56,9 @@ module Gemlock
 
       begin
         response = RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json",
-                                  {:params => {:gems => specs.to_json, :types => types}})
+                                  {:params => {:gems      => specs.to_json,
+                                               :types     => types,
+                                               :automatic => automatic } } )
         gems = JSON.parse(response)
 
         gems.inject({}) do |hash, gem|
@@ -90,7 +92,7 @@ module Gemlock
       Thread.new(update_interval) do |interval|
         loop do
           puts "Checking for gem updates..."
-          outdated = Gemlock.outdated
+          outdated = Gemlock.outdated(true)
           if outdated.empty?
             puts "All gems up to date!"
           else

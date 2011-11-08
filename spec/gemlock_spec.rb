@@ -79,6 +79,16 @@ describe Gemlock do
       Gemlock.stubs(:lockfile).returns((File.join(File.dirname(__FILE__), 'fixtures', 'Gemfile.lock')))
     end
 
+    let(:in_spec) { {"coffee-rails" => "3.1.0",
+                     "jquery-rails" => "1.0.16",
+                     "json"         => "1.5.0",
+                     "rails"        => "3.1.0",
+                     "ruby-debug"   => "0.10.4",
+                     "sass-rails"   => "3.1.0",
+                     "sqlite3"      => "1.3.4",
+                     "uglifier"     => "1.0.4",
+                     "unicorn"      => "3.1.0"} }
+
     it "returns a hash of all outdated gems" do
       expected = {'coffee-rails' => { :current => '3.1.0',
                                       :latest  => '3.1.1' },
@@ -95,21 +105,22 @@ describe Gemlock do
     end
 
     it "checks for each gem individually if the bulk check fails" do
-      in_spec = {"coffee-rails" => "3.1.0",
-                 "jquery-rails" => "1.0.16",
-                 "json"         => "1.5.0",
-                 "rails"        => "3.1.0",
-                 "ruby-debug"   => "0.10.4",
-                 "sass-rails"   => "3.1.0",
-                 "sqlite3"      => "1.3.4",
-                 "uglifier"     => "1.0.4",
-                 "unicorn"      => "3.1.0"}
-
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
-                                   {:params => {:gems => in_spec.to_json, :types => nil}}).raises(RestClient::GatewayTimeout)
+                                   {:params => {:gems      => in_spec.to_json,
+                                                :types     => nil,
+                                                :automatic => false }}).raises(RestClient::GatewayTimeout)
       Gemlock.expects(:check_gems_individually).with(in_spec)
 
       Gemlock.outdated
+    end
+
+    it "sets an flag if it is an automatic check" do
+      RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
+                                    {:params => {:gems      => in_spec.to_json,
+                                                 :types     => nil,
+                                                 :automatic => true}}).returns('{}')
+
+      Gemlock.outdated(true)
     end
   end
 
