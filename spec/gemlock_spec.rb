@@ -44,7 +44,7 @@ describe Gemlock do
 
     it "looks up and return the latest version of a given gem" do
       version = Gemlock.lookup_version("rails")
-      version.should eql "3.1.0"
+      version.should eql "3.1.1"
     end
   end
 
