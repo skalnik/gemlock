@@ -106,7 +106,7 @@ describe Gemlock do
                  "unicorn"      => "3.1.0"}
 
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
-                                   {:params => {:gems => in_spec.to_json}}).raises(RestClient::GatewayTimeout)
+                                   {:params => {:gems => in_spec.to_json, :types => nil}}).raises(RestClient::GatewayTimeout)
       Gemlock.expects(:check_gems_individually).with(in_spec)
 
       Gemlock.outdated
