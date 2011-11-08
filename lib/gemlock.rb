@@ -48,12 +48,18 @@ module Gemlock
         specs[spec.name] = spec.version.to_s
       end
 
-      response = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json", {:params => {:gems => specs.to_json}}))
+      begin
+        response = RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json",
+                                  {:params => {:gems => specs.to_json}})
+        gems = JSON.parse(response)
 
-      response.inject({}) do |hash, gem|
-        name, version = *gem
-        hash[name] = {:latest => version, :current => specs[name]}
-        hash
+        gems.inject({}) do |hash, gem|
+          name, version = *gem
+          hash[name] = {:latest => version, :current => specs[name]}
+          hash
+        end
+      rescue RestClient::GatewayTimeout => e
+        check_gems_individually(specs)
       end
     end
 

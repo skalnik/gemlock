@@ -93,6 +93,24 @@ describe Gemlock do
 
       Gemlock.outdated.should eql expected
     end
+
+    it "checks for each gem individually if the bulk check fails" do
+      in_spec = {"coffee-rails" => "3.1.0",
+                 "jquery-rails" => "1.0.16",
+                 "json"         => "1.5.0",
+                 "rails"        => "3.1.0",
+                 "ruby-debug"   => "0.10.4",
+                 "sass-rails"   => "3.1.0",
+                 "sqlite3"      => "1.3.4",
+                 "uglifier"     => "1.0.4",
+                 "unicorn"      => "3.1.0"}
+
+      RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
+                                   {:params => {:gems => in_spec.to_json}}).raises(RestClient::GatewayTimeout)
+      Gemlock.expects(:check_gems_individually).with(in_spec)
+
+      Gemlock.outdated
+    end
   end
 
   describe ".config" do

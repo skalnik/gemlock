@@ -2,39 +2,6 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22uglifier%22%3A%221.0.4%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22coffee-rails%22%3A%223.1.0%22%2C%22rails%22%3A%223.1.0%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22unicorn%22%3A%223.1.0%22%2C%22json%22%3A%221.5.0%22%7D
-    body: !!null 
-    headers:
-      accept:
-      - ! '*/*; q=0.5, application/xml'
-      accept-encoding:
-      - gzip, deflate
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
-      code: 200
-      message: OK
-    headers:
-      x-ua-compatible:
-      - IE=Edge,chrome=1
-      etag:
-      - ! '"2677ac46686f26ea7e822ac8f544edbb"'
-      connection:
-      - keep-alive
-      content-type:
-      - application/json; charset=utf-8
-      x-runtime:
-      - '0.473582'
-      server:
-      - thin 1.2.11 codename Bat-Shit Crazy
-      cache-control:
-      - max-age=0, private, must-revalidate
-      transfer-encoding:
-      - chunked
-    body: ! '{"coffee-rails":"3.1.1","rails":"3.1.1","sass-rails":"3.1.4","unicorn":"4.1.1","json":"1.6.1"}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
     uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22coffee-rails%22%3A%223.1.0%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22json%22%3A%221.5.0%22%2C%22rails%22%3A%223.1.0%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22uglifier%22%3A%221.0.4%22%2C%22unicorn%22%3A%223.1.0%22%7D
     body: !!null 
     headers:
@@ -56,12 +23,309 @@
       server:
       - thin 1.2.11 codename Bat-Shit Crazy
       x-runtime:
-      - '1.008680'
+      - '3.794857'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      content-length:
+      - '94'
+      connection:
+      - keep-alive
+    body: ! '{"coffee-rails":"3.1.1","json":"1.6.1","rails":"3.1.1","sass-rails":"3.1.4","unicorn":"4.1.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/coffee-rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"e48bc9e9a623234be1d8911ffbbdd8bc"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.046095'
       x-ua-compatible:
       - IE=Edge,chrome=1
       transfer-encoding:
       - chunked
       connection:
       - keep-alive
-    body: ! '{"coffee-rails":"3.1.1","json":"1.6.1","rails":"3.1.1","sass-rails":"3.1.4","unicorn":"4.1.1"}'
+    body: ! '{"version":"3.1.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/jquery-rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"ce311130187e1fa77e0100a80a2b4e2d"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.128872'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.0.16"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/json/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"b72b98a3bea046b262dba7c036cd90af"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.069898'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.6.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"e48bc9e9a623234be1d8911ffbbdd8bc"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.240258'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"3.1.1"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/ruby-debug/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"e444d5094868df5925e938d14cdb23b9"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.034991'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"0.10.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/sass-rails/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"412d8485398a9d5a18c2e6604442a6ae"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.084979'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"3.1.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/sqlite3/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"dbb196aab8808e02b0cb33aa4e6a3052"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.033907'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      content-length:
+      - '19'
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.3.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/uglifier/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"939c95352a2d69888fb560ca5e5d8e71"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.046664'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"1.0.4"}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/unicorn/latest.json
+    body: !!null 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - ! '"37cd5df77bb485fe8e803759139301f7"'
+      server:
+      - thin 1.2.11 codename Bat-Shit Crazy
+      x-runtime:
+      - '0.352779'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body: ! '{"version":"4.1.1"}'
     http_version: '1.1'
