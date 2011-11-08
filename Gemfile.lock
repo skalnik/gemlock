@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gemlock (0.1.1)
+    gemlock (0.2.0)
       bundler (~> 1.0.0)
       json
       rake (>= 0.8.7)
