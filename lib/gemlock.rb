@@ -97,12 +97,12 @@ module Gemlock
     end
 
     # By default, check for updates every 2 weeks
-    def initializer
+    def initializer(automatic = true)
       update_interval = Gemlock.update_interval
       Thread.new(update_interval) do |interval|
         loop do
           puts "Checking for gem updates..."
-          outdated = Gemlock.outdated(true)
+          outdated = Gemlock.outdated(automatic)
           if outdated.empty?
             puts "All gems up to date!"
           else
