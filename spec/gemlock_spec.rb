@@ -119,6 +119,15 @@ describe Gemlock do
 
       Gemlock.outdated(true)
     end
+
+    it "sends the email address in config to the server if present" do
+      Gemlock.stubs(:parsed_config).returns({'email' => 'hi@mikeskalnik.com'})
+      RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
+                                    {:params => {:gems  => in_spec.to_json,
+                                                 :email => 'hi@mikeskalnik.com'}}).returns('{}')
+
+      Gemlock.outdated
+    end
   end
 
   describe ".config" do
