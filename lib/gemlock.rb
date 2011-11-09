@@ -156,7 +156,7 @@ module Gemlock
         latest_version = lookup_version(name)
         update_type = difference(version, latest_version)
         if Gem::Version.new(latest_version) > Gem::Version.new(version)
-          if parsed_config.nil? || parsed_config['releases'].include?(update_type)
+          if parsed_config && parsed_config['releases'].include?(update_type)
             outdated[name] = latest_version
           end
         end
