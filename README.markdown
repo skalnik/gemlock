@@ -21,8 +21,9 @@ version available.
 
 If you're using Gemlock in a Rails project, whenever you start your server,
 Gemlock will check for updates. Then, it will check again in 2 weeks or when
-you restart your server, whichever comes first. In the future, both of these
-should be configurable options.
+you restart your server, whichever comes first. If you specify an email in the
+configuration file, you'll also get notified when these automatic checks run and
+gem updates are found.
 
 Installation
 ------------
@@ -36,13 +37,16 @@ Configuration
 
 Configuration options should be placed in the file config/gemlock.yml. Currently
 Gemlock does not auto-create this file, so for the moment you will need to create
-the file by hand. The only configuration options that are used currently are the 
-'interval' field which tells Gemlock how often to check for updates, and the 
-'releases' field which lets the user specify what types of gem updates they would
-like to be notified about. An example of gemlock.yml would look like:
+the file by hand. There are a few parameters:
+
+  * `releases` - What kind of releases you'd like to know about (e.g. `major`, `minor`, `patch`)
+  * `interval` - How often you'd like to check for updates
+  * `email`    - An email address to email if updates are found while automatic checks
+
+An example file would look like:
 
     releases:
-      -minor
-      -patch
-    interval:
-      - 2 weeks
+      - minor
+      - patch
+    interval: 2 weeks
+    email: hi@mikeskalnik.com
