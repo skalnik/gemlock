@@ -170,6 +170,23 @@ describe Gemlock do
     end
   end
 
+  describe ".email" do
+    it "returns the email in the config if present and valid" do
+      Gemlock.stubs(:parsed_config).returns({'email' => 'hi@mikeskalnik.com'})
+      Gemlock.email.should eql 'hi@mikeskalnik.com'
+    end
+
+    it "returns nil if the email in the config is invalid" do
+      Gemlock.stubs(:parsed_config).returns({'email' => 'd@er@p.com'})
+      Gemlock.email.should be_nil
+    end
+
+    it "returns nil if there is no config" do
+      Gemlock.stubs(:parsed_config).returns(nil)
+      Gemlock.email.should be_nil
+    end
+  end
+
   describe ".difference" do
     it "returns 'major' if there is a major version difference between the two gem versions" do
       Gemlock.difference("2.0.0",  "3.0.0").should eql "major"

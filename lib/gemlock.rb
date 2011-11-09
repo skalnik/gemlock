@@ -36,6 +36,16 @@ module Gemlock
       YAML.load_file(config) if config
     end
 
+    def email
+      email = parsed_config['email'] if parsed_config
+
+      if email =~ /^[^@]+@[^@]+$/
+        email
+      else
+        nil
+      end
+    end
+
     def lookup_version(name)
       json_hash = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/ruby_gems/#{name}/latest.json"))
 
