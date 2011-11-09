@@ -58,17 +58,19 @@ module Gemlock
         specs[spec.name] = spec.version.to_s
       end
 
-      types = if parsed_config
-                parsed_config['releases']
-              else
-                nil
-              end
-
       begin
-        response = RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json",
-                                  {:params => {:gems      => specs.to_json,
-                                               :types     => types,
-                                               :automatic => automatic } } )
+        types = if parsed_config
+                  parsed_config['releases']
+                else
+                  nil
+                end
+
+        params = {:gems => specs.to_json }
+        params[:types]     = types     if types
+        params[:automatic] = automatic if automatic
+        params[:email]     = email     if email
+
+        response = RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json", :params => params)
         gems = JSON.parse(response)
 
         gems.inject({}) do |hash, gem|

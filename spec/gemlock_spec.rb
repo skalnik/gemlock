@@ -106,9 +106,7 @@ describe Gemlock do
 
     it "checks for each gem individually if the bulk check fails" do
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
-                                   {:params => {:gems      => in_spec.to_json,
-                                                :types     => nil,
-                                                :automatic => false }}).raises(RestClient::GatewayTimeout)
+                                   {:params => {:gems      => in_spec.to_json}}).raises(RestClient::GatewayTimeout)
       Gemlock.expects(:check_gems_individually).with(in_spec)
 
       Gemlock.outdated
@@ -117,7 +115,6 @@ describe Gemlock do
     it "sets an flag if it is an automatic check" do
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
                                     {:params => {:gems      => in_spec.to_json,
-                                                 :types     => nil,
                                                  :automatic => true}}).returns('{}')
 
       Gemlock.outdated(true)

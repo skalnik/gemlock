@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22coffee-rails%22%3A%223.1.0%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22json%22%3A%221.5.0%22%2C%22rails%22%3A%223.1.0%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22uglifier%22%3A%221.0.4%22%2C%22unicorn%22%3A%223.1.0%22%7D&types=&automatic=false
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22coffee-rails%22%3A%223.1.0%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22json%22%3A%221.5.0%22%2C%22rails%22%3A%223.1.0%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22uglifier%22%3A%221.0.4%22%2C%22unicorn%22%3A%223.1.0%22%7D
     body: !!null 
       str: ""
       "@taguri": x-private:null
@@ -25,7 +25,7 @@
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "0.633437"
+      - "0.962356"
       server: 
       - thin 1.2.11 codename Bat-Shit Crazy
       cache-control: 
@@ -37,7 +37,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22uglifier%22%3A%221.0.4%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22coffee-rails%22%3A%223.1.0%22%2C%22rails%22%3A%223.1.0%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22unicorn%22%3A%223.1.0%22%2C%22json%22%3A%221.5.0%22%7D&types=&automatic=false
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22uglifier%22%3A%221.0.4%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22coffee-rails%22%3A%223.1.0%22%2C%22rails%22%3A%223.1.0%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22unicorn%22%3A%223.1.0%22%2C%22json%22%3A%221.5.0%22%7D
     body: 
     headers: 
       accept: 
@@ -58,7 +58,7 @@
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "1.926026"
+      - "0.644295"
       server: 
       - thin 1.2.11 codename Bat-Shit Crazy
       cache-control: 
