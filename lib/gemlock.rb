@@ -4,6 +4,7 @@ require "json"
 require "yaml"
 
 require "gemlock/version"
+require "gemlock/config"
 
 module Gemlock
   require 'gemlock/railtie' if defined?(Rails)
@@ -26,26 +27,6 @@ module Gemlock
       locked_gemfile_specs.delete_if { |spec| !gemfile_names.include?(spec.name) }
     end
 
-    def config
-      if defined?(Rails) && File.exists?(Rails.root.join('config', 'gemlock.yml'))
-        Rails.root.join('config', 'gemlock.yml')
-      end
-    end
-
-    def parsed_config
-      YAML.load_file(config) if config
-    end
-
-    def email
-      email = parsed_config['email'] if parsed_config
-
-      if email =~ /^[^@]+@[^@]+$/
-        email
-      else
-        nil
-      end
-    end
-
     def lookup_version(name)
       json_hash = JSON.parse(RestClient.get("http://gemlock.herokuapp.com/ruby_gems/#{name}/latest.json"))
 
@@ -59,16 +40,16 @@ module Gemlock
       end
 
       begin
-        types = if parsed_config
-                  parsed_config['releases']
+        types = if Config.parsed
+                  Config.parsed['releases']
                 else
                   nil
                 end
 
         params = {:gems => specs.to_json }
-        params[:types]     = types     if types
-        params[:automatic] = automatic if automatic
-        params[:email]     = email     if email
+        params[:types]     = types        if types
+        params[:automatic] = automatic    if automatic
+        params[:email]     = Config.email if Config.email
 
         response = RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json", :params => params)
         gems = JSON.parse(response)
@@ -100,7 +81,7 @@ module Gemlock
 
     # By default, check for updates every 2 weeks
     def initializer(automatic = true)
-      update_interval = Gemlock.update_interval
+      update_interval = Config.update_interval
       Thread.new(update_interval) do |interval|
         loop do
           puts "Checking for gem updates..."
@@ -123,32 +104,6 @@ module Gemlock
       end
     end
 
-    def update_interval
-      if parsed_config
-        if parsed_config["interval"]
-          interval = parsed_config["interval"][0]
-
-          num_hours = interval.match(/\d*/)[0].to_i
-          if interval =~ /hour/
-            delay = 60*60
-          elsif interval =~ /day/
-            delay = 60*60*24
-          elsif interval =~ /week/
-            delay = 60*60*24*7
-          elsif interval =~ /month/
-            delay = 60*60*24*30
-          end
-          if delay && num_hours > 0
-            delay *= num_hours
-            return delay
-          elsif delay
-            return delay
-          end
-        end
-      end
-      60*60*24*7 #Seconds in a week
-    end
-
     def check_gems_individually(gems)
       outdated = {}
 
@@ -156,7 +111,7 @@ module Gemlock
         latest_version = lookup_version(name)
         update_type = difference(version, latest_version)
         if Gem::Version.new(latest_version) > Gem::Version.new(version)
-          if parsed_config && parsed_config['releases'].include?(update_type)
+          if Config.parsed && Config.parsed['releases'].include?(update_type)
             outdated[name] = latest_version
           end
         end

@@ -52,7 +52,7 @@ describe Gemlock do
     use_vcr_cassette
 
     it "returns a hash of outdated gems & versions specificed in config" do
-      Gemlock.stubs(:config).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
+      Gemlock::Config.stubs(:file).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
 
       gems = Gemlock.locked_gemfile_specs.inject({}) do |hash, spec|
         hash[spec.name] = spec.version.to_s
@@ -121,7 +121,7 @@ describe Gemlock do
     end
 
     it "sends the email address in config to the server if present" do
-      Gemlock.stubs(:parsed_config).returns({'email' => 'hi@mikeskalnik.com'})
+      Gemlock::Config.stubs(:parsed).returns({'email' => 'hi@mikeskalnik.com'})
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
                                     {:params => {:gems  => in_spec.to_json,
                                                  :email => 'hi@mikeskalnik.com'}}).returns('{}')
@@ -130,68 +130,6 @@ describe Gemlock do
     end
   end
 
-  describe ".config" do
-    it "loads gemlock.yml from the config directory if Rails is defined" do
-      module Rails
-        def self.root
-          Pathname.new(File.dirname(__FILE__))
-        end
-      end
-      expected_path = Pathname.new(File.dirname(__FILE__)).join('config', 'gemlock.yml')
-      File.stubs(:exists?).with(expected_path).returns(true)
-
-      Gemlock.config.should eql expected_path
-
-      # Undefine Rails module
-      Object.send(:remove_const, :Rails)
-
-    end
-
-    it "is nil if Rails is defined and the files does not exist" do
-      module Rails
-        def self.root
-          Pathname.new(File.dirname(__FILE__))
-        end
-      end
-
-      Gemlock.parsed_config.should be_nil
-
-      Object.send(:remove_const, :Rails)
-    end
-
-    it "is nil if Rails is not defined and the file exists" do
-      Gemlock.config.should be_nil
-    end
-  end
-
-  describe ".parsed_config" do
-    it "returns nil if the config file is not present" do
-      Gemlock.parsed_config.should be_nil
-    end
-
-    it "returns a hash containing the user's email if config file is present" do
-      Gemlock.stubs(:config).returns((File.join(File.dirname(__FILE__), 'fixtures', 'gemlock.yml')))
-
-      Gemlock.parsed_config["email"].should eql "tester@example.com"
-    end
-  end
-
-  describe ".email" do
-    it "returns the email in the config if present and valid" do
-      Gemlock.stubs(:parsed_config).returns({'email' => 'hi@mikeskalnik.com'})
-      Gemlock.email.should eql 'hi@mikeskalnik.com'
-    end
-
-    it "returns nil if the email in the config is invalid" do
-      Gemlock.stubs(:parsed_config).returns({'email' => 'd@er@p.com'})
-      Gemlock.email.should be_nil
-    end
-
-    it "returns nil if there is no config" do
-      Gemlock.stubs(:parsed_config).returns(nil)
-      Gemlock.email.should be_nil
-    end
-  end
 
   describe ".difference" do
     it "returns 'major' if there is a major version difference between the two gem versions" do
@@ -254,35 +192,6 @@ describe Gemlock do
     it "appends missing zeros to the end of a version if not given" do
       Gemlock.send(:process_version, "3").should eql [3, 0, 0]
       Gemlock.send(:process_version, "3.0").should eql [3, 0, 0]
-    end
-  end
-
-  describe ".update_interval" do
-    it "returns the number of seconds in a week if config_file is not present, or interval is not specified" do
-      Gemlock.update_interval.should eql 60*60*24*7
-
-      Gemlock.stubs(:parsed_config).returns({"email"=>"tester@example.com"})
-      Gemlock.update_interval.should eql 60*60*24*7
-    end
-
-    it "returns the number of seconds until the next number of hours as given" do
-      Gemlock.stubs(:parsed_config).returns({"interval" => ["8 hours"]})
-      Gemlock.update_interval.should eql 60*60*8
-    end
-
-    it "returns the number of seconds until the next number of days as given" do
-      Gemlock.stubs(:parsed_config).returns({"interval" => ["4 days"]})
-      Gemlock.update_interval.should eql 60*60*24*4
-    end
-
-    it "returns the number of seconds until the next number of weeks as given" do
-      Gemlock.stubs(:parsed_config).returns({"interval" => ["2 weeks"]})
-      Gemlock.update_interval.should eql 60*60*24*7*2
-    end
-
-    it "returns the number of seconds unil the next number of months as given" do
-      Gemlock.stubs(:parsed_config).returns({"interval" => ["3 months"]})
-      Gemlock.update_interval.should eql 60*60*24*30*3
     end
   end
 
