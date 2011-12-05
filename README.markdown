@@ -35,13 +35,13 @@ Installation
 Configuration
 -------------
 
-Configuration options should be placed in the file config/gemlock.yml. Currently
-Gemlock does not auto-create this file, so for the moment you will need to create
-the file by hand. There are a few parameters:
+Gemlock is can be customized to suit your neeeds. Just run `rails generate
+gemlock:config` to generate a sample config with a few options:
 
   * `releases` - What kind of releases you'd like to know about (e.g. `major`, `minor`, `patch`)
   * `interval` - How often you'd like to check for updates
   * `email`    - An email address to email if updates are found while automatic checks
+  * `name`     - The name of your application
 
 An example file would look like:
 
