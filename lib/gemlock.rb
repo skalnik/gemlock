@@ -40,11 +40,13 @@ module Gemlock
       end
 
       begin
-        types = if Config.parsed
-                  Config.parsed['releases']
-                else
-                  nil
-                end
+        types = nil
+        app_name = nil
+
+        if Config.parsed
+          type = Config.parsed['releases']
+          app_name = Config.parsed['app_name']
+        end
 
         params = {:gems => specs.to_json }
         params[:types]     = types        if types
