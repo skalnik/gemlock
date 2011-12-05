@@ -50,6 +50,7 @@ module Gemlock
 
         params = {:gems => specs.to_json }
         params[:types]     = types        if types
+        params[:app_name]  = app_name     if app_name
         params[:automatic] = automatic    if automatic
         params[:email]     = Config.email if Config.email
 

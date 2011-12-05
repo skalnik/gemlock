@@ -128,6 +128,14 @@ describe Gemlock do
 
       Gemlock.outdated
     end
+
+    it "sends the application name in config to the server if present" do
+      Gemlock::Config.stubs(:parsed).returns({'name' => 'Gemlock'})
+      RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
+                                    {:params => {:gems     => in_spec.to_json,
+                                                 :app_name => 'Gemlock'}}).returns('{}')
+      Gemlock.outdated
+    end
   end
 
 
