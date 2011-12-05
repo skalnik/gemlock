@@ -45,7 +45,7 @@ module Gemlock
 
         if Config.parsed
           type = Config.parsed['releases']
-          app_name = Config.parsed['app_name']
+          app_name = Config.parsed['name']
         end
 
         params = {:gems => specs.to_json }
