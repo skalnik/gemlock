@@ -11,27 +11,28 @@
       - gzip, deflate
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
+      cache-control:
+      - max-age=0, private, must-revalidate
       content-type:
-      - text/html
+      - application/json; charset=utf-8
+      date:
+      - Mon, 12 Dec 2011 05:42:19 GMT
+      etag:
+      - ! '"45e7c12a2af240180a4a8fa65a810274"'
       server:
       - thin 1.3.1 codename Triple Espresso
+      x-rack-cache:
+      - miss
       x-runtime:
-      - '0.103171'
+      - '0.040735'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
       content-length:
-      - '728'
+      - '155'
       connection:
       - keep-alive
-    body: ! "<!DOCTYPE html>\n<html>\n<head>\n  <title>We're sorry, but something
-      went wrong (500)</title>\n  <style type=\"text/css\">\n    body { background-color:
-      #fff; color: #666; text-align: center; font-family: arial, sans-serif; }\n    div.dialog
-      {\n      width: 25em;\n      padding: 0 4em;\n      margin: 4em auto 0 auto;\n
-      \     border: 1px solid #ccc;\n      border-right-color: #999;\n      border-bottom-color:
-      #999;\n    }\n    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }\n
-      \ </style>\n</head>\n\n<body>\n  <!-- This file lives in public/500.html -->\n
-      \ <div class=\"dialog\">\n    <h1>We're sorry, but something went wrong.</h1>\n
-      \   <p>We've been notified about this issue and we'll take a look at it shortly.</p>\n
-      \ </div>\n</body>\n</html>\n"
+    body: ! '{"coffee-rails":"3.1.1","jquery-rails":"1.0.19","json":"1.6.3","rails":"3.1.3","sass-rails":"3.1.5","sqlite3":"1.3.5","uglifier":"1.1.0","unicorn":"4.1.1"}'
     http_version: '1.1'

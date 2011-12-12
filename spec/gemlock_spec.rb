@@ -93,13 +93,19 @@ describe Gemlock do
       expected = {'coffee-rails' => { :current => '3.1.0',
                                       :latest  => '3.1.1' },
                   'sass-rails'   => { :current => '3.1.0',
-                                      :latest  => '3.1.4' },
+                                      :latest  => '3.1.5' },
                   'unicorn'      => { :current => '3.1.0',
                                       :latest  => '4.1.1' },
                   'json'         => { :current => '1.5.0',
-                                      :latest  => '1.6.1' },
+                                      :latest  => '1.6.3' },
                   'rails'        => { :current => '3.1.0',
-                                      :latest  => '3.1.1'} }
+                                      :latest  => '3.1.3'},
+                  'jquery-rails' => { :current => '1.0.16',
+                                      :latest  => '1.0.19'},
+                  'sqlite3'      => { :current => '1.3.4',
+                                      :latest  => '1.3.5'},
+                  'uglifier'     => { :current => '1.0.4',
+                                      :latest  => '1.1.0'} }
 
       Gemlock.outdated.should eql expected
     end
