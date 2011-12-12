@@ -1,38 +1,77 @@
----
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22coffee-rails%22%3A%223.1.0%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22json%22%3A%221.5.0%22%2C%22rails%22%3A%223.1.0%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22uglifier%22%3A%221.0.4%22%2C%22unicorn%22%3A%223.1.0%22%7D&interval=1209600
     body: !!null 
-    headers:
-      accept:
-      - ! '*/*; q=0.5, application/xml'
-      accept-encoding:
+      str: ""
+      "@taguri": x-private:null
+    headers: 
+      accept: 
+      - "*/*; q=0.5, application/xml"
+      accept-encoding: 
       - gzip, deflate
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      cache-control:
-      - max-age=0, private, must-revalidate
-      content-type:
-      - application/json; charset=utf-8
-      date:
-      - Mon, 12 Dec 2011 05:42:19 GMT
-      etag:
-      - ! '"45e7c12a2af240180a4a8fa65a810274"'
-      server:
-      - thin 1.3.1 codename Triple Espresso
-      x-rack-cache:
-      - miss
-      x-runtime:
-      - '0.040735'
-      x-ua-compatible:
+    headers: 
+      x-ua-compatible: 
       - IE=Edge,chrome=1
-      content-length:
-      - '155'
-      connection:
+      etag: 
+      - "\"45e7c12a2af240180a4a8fa65a810274\""
+      connection: 
       - keep-alive
-    body: ! '{"coffee-rails":"3.1.1","jquery-rails":"1.0.19","json":"1.6.3","rails":"3.1.3","sass-rails":"3.1.5","sqlite3":"1.3.5","uglifier":"1.1.0","unicorn":"4.1.1"}'
-    http_version: '1.1'
+      x-rack-cache: 
+      - miss
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.040735"
+      server: 
+      - thin 1.3.1 codename Triple Espresso
+      date: 
+      - Mon, 12 Dec 2011 05:42:19 GMT
+      content-length: 
+      - "155"
+      cache-control: 
+      - max-age=0, private, must-revalidate
+    body: "{\"coffee-rails\":\"3.1.1\",\"jquery-rails\":\"1.0.19\",\"json\":\"1.6.3\",\"rails\":\"3.1.3\",\"sass-rails\":\"3.1.5\",\"sqlite3\":\"1.3.5\",\"uglifier\":\"1.1.0\",\"unicorn\":\"4.1.1\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22uglifier%22%3A%221.0.4%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22coffee-rails%22%3A%223.1.0%22%2C%22rails%22%3A%223.1.0%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22unicorn%22%3A%223.1.0%22%2C%22json%22%3A%221.5.0%22%7D&interval=1209600
+    body: 
+    headers: 
+      accept: 
+      - "*/*; q=0.5, application/xml"
+      accept-encoding: 
+      - gzip, deflate
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"aad0433ff1c22d5995073835ec598314\""
+      connection: 
+      - keep-alive
+      x-rack-cache: 
+      - miss
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.026676"
+      server: 
+      - thin 1.3.1 codename Triple Espresso
+      date: 
+      - Mon, 12 Dec 2011 05:56:30 GMT
+      content-length: 
+      - "155"
+      cache-control: 
+      - max-age=0, private, must-revalidate
+    body: "{\"uglifier\":\"1.1.0\",\"sqlite3\":\"1.3.5\",\"jquery-rails\":\"1.0.19\",\"coffee-rails\":\"3.1.1\",\"rails\":\"3.1.3\",\"sass-rails\":\"3.1.5\",\"unicorn\":\"4.1.1\",\"json\":\"1.6.3\"}"
+    http_version: "1.1"
