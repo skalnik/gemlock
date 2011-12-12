@@ -44,7 +44,7 @@ module Gemlock
             end
           end
         end
-        60*60*24*7 #Seconds in a week
+        60*60*24*7*2 #Seconds in 2 weeks
       end
     end
   end

@@ -1,69 +1,37 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22coffee-rails%22%3A%223.1.0%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22json%22%3A%221.5.0%22%2C%22rails%22%3A%223.1.0%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22uglifier%22%3A%221.0.4%22%2C%22unicorn%22%3A%223.1.0%22%7D
+    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22coffee-rails%22%3A%223.1.0%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22json%22%3A%221.5.0%22%2C%22rails%22%3A%223.1.0%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22uglifier%22%3A%221.0.4%22%2C%22unicorn%22%3A%223.1.0%22%7D&interval=1209600
     body: !!null 
-      str: ""
-      "@taguri": x-private:null
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
       - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"4ec4d6021b6b51fcb08f39d440f606b8\""
-      connection: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 500
+      message: Internal Server Error
+    headers:
+      content-type:
+      - text/html
+      server:
+      - thin 1.3.1 codename Triple Espresso
+      x-runtime:
+      - '0.103171'
+      content-length:
+      - '728'
+      connection:
       - keep-alive
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.962356"
-      server: 
-      - thin 1.2.11 codename Bat-Shit Crazy
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      transfer-encoding: 
-      - chunked
-    body: "{\"coffee-rails\":\"3.1.1\",\"json\":\"1.6.1\",\"rails\":\"3.1.1\",\"sass-rails\":\"3.1.4\",\"unicorn\":\"4.1.1\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: http://gemlock.herokuapp.com:80/ruby_gems/updates.json?gems=%7B%22uglifier%22%3A%221.0.4%22%2C%22sqlite3%22%3A%221.3.4%22%2C%22ruby-debug%22%3A%220.10.4%22%2C%22jquery-rails%22%3A%221.0.16%22%2C%22coffee-rails%22%3A%223.1.0%22%2C%22rails%22%3A%223.1.0%22%2C%22sass-rails%22%3A%223.1.0%22%2C%22unicorn%22%3A%223.1.0%22%2C%22json%22%3A%221.5.0%22%7D
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
-      - gzip, deflate
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"2677ac46686f26ea7e822ac8f544edbb\""
-      connection: 
-      - keep-alive
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.644295"
-      server: 
-      - thin 1.2.11 codename Bat-Shit Crazy
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      transfer-encoding: 
-      - chunked
-    body: "{\"coffee-rails\":\"3.1.1\",\"rails\":\"3.1.1\",\"sass-rails\":\"3.1.4\",\"unicorn\":\"4.1.1\",\"json\":\"1.6.1\"}"
-    http_version: "1.1"
+    body: ! "<!DOCTYPE html>\n<html>\n<head>\n  <title>We're sorry, but something
+      went wrong (500)</title>\n  <style type=\"text/css\">\n    body { background-color:
+      #fff; color: #666; text-align: center; font-family: arial, sans-serif; }\n    div.dialog
+      {\n      width: 25em;\n      padding: 0 4em;\n      margin: 4em auto 0 auto;\n
+      \     border: 1px solid #ccc;\n      border-right-color: #999;\n      border-bottom-color:
+      #999;\n    }\n    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }\n
+      \ </style>\n</head>\n\n<body>\n  <!-- This file lives in public/500.html -->\n
+      \ <div class=\"dialog\">\n    <h1>We're sorry, but something went wrong.</h1>\n
+      \   <p>We've been notified about this issue and we'll take a look at it shortly.</p>\n
+      \ </div>\n</body>\n</html>\n"
+    http_version: '1.1'

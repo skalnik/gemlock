@@ -52,6 +52,7 @@ module Gemlock
         params[:types]     = types        if types
         params[:app_name]  = app_name     if app_name
         params[:automatic] = automatic    if automatic
+        params[:interval]  = Config.update_interval
         params[:email]     = Config.email if Config.email
 
         response = RestClient.get("http://gemlock.herokuapp.com/ruby_gems/updates.json", :params => params)

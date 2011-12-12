@@ -106,7 +106,8 @@ describe Gemlock do
 
     it "checks for each gem individually if the bulk check fails" do
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
-                                   {:params => {:gems      => in_spec.to_json}}).raises(RestClient::GatewayTimeout)
+                                   {:params => {:gems      => in_spec.to_json,
+                                                :interval  => 60*60*24*7*2}}).raises(RestClient::GatewayTimeout)
       Gemlock.expects(:check_gems_individually).with(in_spec)
 
       Gemlock.outdated
@@ -115,7 +116,8 @@ describe Gemlock do
     it "sets an flag if it is an automatic check" do
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
                                     {:params => {:gems      => in_spec.to_json,
-                                                 :automatic => true}}).returns('{}')
+                                                 :automatic => true,
+                                                 :interval  => 60*60*24*7*2}}).returns('{}')
 
       Gemlock.outdated(true)
     end
@@ -124,7 +126,8 @@ describe Gemlock do
       Gemlock::Config.stubs(:parsed).returns({'email' => 'hi@mikeskalnik.com'})
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
                                     {:params => {:gems  => in_spec.to_json,
-                                                 :email => 'hi@mikeskalnik.com'}}).returns('{}')
+                                                 :email => 'hi@mikeskalnik.com',
+                                                 :interval => 60*60*24*7*2}}).returns('{}')
 
       Gemlock.outdated
     end
@@ -133,7 +136,16 @@ describe Gemlock do
       Gemlock::Config.stubs(:parsed).returns({'name' => 'Gemlock'})
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
                                     {:params => {:gems     => in_spec.to_json,
-                                                 :app_name => 'Gemlock'}}).returns('{}')
+                                                 :app_name => 'Gemlock',
+                                                 :interval => 60*60*24*7*2}}).returns('{}')
+      Gemlock.outdated
+    end
+
+    it "sends the update interval in config to the server if present" do
+      Gemlock::Config.stubs(:parsed).returns({'interval' => '2 weeks'})
+      RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
+                                    {:params => {:gems     => in_spec.to_json,
+                                                 :interval => 60*60*24*7*2}}).returns('{}')
       Gemlock.outdated
     end
   end
