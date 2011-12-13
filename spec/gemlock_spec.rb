@@ -148,7 +148,7 @@ describe Gemlock do
     end
 
     it "sends the update interval in config to the server if present" do
-      Gemlock::Config.stubs(:parsed).returns({'interval' => '2 weeks'})
+      Gemlock::Config.stubs(:parsed).returns({'interval' => ['2 weeks']})
       RestClient.expects(:get).with("http://gemlock.herokuapp.com/ruby_gems/updates.json",
                                     {:params => {:gems     => in_spec.to_json,
                                                  :interval => 60*60*24*7*2}}).returns('{}')
