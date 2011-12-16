@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('rake', '>= 0.8.7')
-  s.add_dependency('bundler', '~> 1.0.0')
+  s.add_dependency('bundler', '>= 1.0.0')
   s.add_dependency('rest-client')
   s.add_dependency('json')
 
